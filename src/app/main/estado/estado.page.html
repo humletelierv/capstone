@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Estado</ion-title>
+    </ion-toolbar>
+    <ion-toolbar>
+      <ion-searchbar></ion-searchbar>
+    </ion-toolbar>
+  </ion-header>
+
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Filtrar por Fecha</ion-label>
+    <ion-datetime
+      display-format="DD-MM-YYYY"
+      placeholder="Selecciona una fecha"
+      [(ngModel)]="fechaFiltro"
+      (ionChange)="filtrarPorFecha()"
+    ></ion-datetime>
+  </ion-item>
+
+  <ion-list *ngIf="fechasUnicas.length > 0; else noData">
+    <!-- Tarjetas para las fechas únicas con batches -->
+    <ion-card
+      *ngFor="let fecha of fechasFiltradas | orderBy: 'desc'; let i = index"
+      [ngClass]="{'card-open': isCardOpen(i), 'card-closed': !isCardOpen(i)}"
+      (click)="toggleCard(i)">
+      <ion-card-header>
+        <ion-card-title>Fecha: {{ fecha | date: 'dd-MM-yyyy' }}</ion-card-title>
+      </ion-card-header>
+
+      <!-- Lista de batches colapsable -->
+      <ion-list *ngIf="isCardOpen(i)">
+        <ion-item *ngFor="let batch of getBatchesPorFecha(fecha)" (click)="goToBatchDetails(batch)">
+          <ion-label>
+            <h2>Batch: {{ batch.batch }}</h2>
+            <p>Variedad: {{ batch.tipo_variedad }}</p>
+            <p>Fecha de Horneo: {{ batch.fecha_horneo | date: 'dd-MM-yyyy' }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+  </ion-list>
+
+
+  <ng-template #noData>
+    <p style="text-align: center; margin-top: 20px;">Cargando...</p>
+  </ng-template>
+</ion-content>
+
+
+

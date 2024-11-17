@@ -1,0 +1,99 @@
+ion-note {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+  display: block;
+}
+
+h1{
+  font-size: small;
+}
+h2{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: x-large;
+}
+
+.headerArriba{
+  --background: #ae4a4a; /* Cambia a tu color deseado */
+  --color: white; /* Color del texto en el header */
+  height: 100px; /* Ajusta a la altura que desees */
+
+}
+
+.boton-iniciar-sesion{
+  --background:black;
+  --color:white;
+}
+
+.center-container {
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  height: 100%; /* Asegúrate de que el contenedor tenga altura suficiente */
+}
+
+.rounded-input ion-input {
+  --background: #ffffff; /* Fondo blanco */
+  --border-radius: 10px; /* Bordes redondeados */
+  --padding-start: 10px; /* Espaciado interno */
+  --padding-end: 10px; /* Espaciado interno */
+  border: 1px solid #dcdcdc; /* Borde gris claro */
+  margin: 10px 0; /* Espaciado externo */
+  border-radius: 15px; /* Bordes redondeados */
+
+}
+
+.rounded-input ion-label {
+  color: #333; /* Color del label */
+  font-weight: bold; /* Negrita */
+  font-size: 25px;
+}
+
+.main-content {
+  // display: flex;
+  //height: 500vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  background-color: #ffffff; /* Fondo del contenido principal */
+  overflow: hidden; /* Evita desbordamientos */
+  margin-top: 150px;
+  position:static;
+
+
+}
+
+.no-scroll {
+  height: calc(100vh - var(--ion-toolbar-height) * 2); /* Altura completa menos header y footer */
+  overflow: hidden; /* Elimina el desplazamiento */
+}
+
+.image-container {
+  display: flex; /* Configura un contenedor flexible */
+  justify-content: center; /* Centra horizontalmente */
+  //align-items: center; /* Centra verticalmente */
+  height: 100px; /* Altura opcional del contenedor */
+}
+
+.image-inside {
+  width: 250px;
+  height: 250px;
+  //border-radius: 8px;
+}
+
+.parent-content {
+  display: flex;
+  width: 100%; /* Asegura que el contenedor padre ocupe todo el espacio */
+  height: 100%; /* Asegura que también abarque toda la altura si es necesario */
+}
+
+.input-item{
+  //padding-left: 20px;
+  width: 100%;
+  border-radius: 30px;
+  border: 2px solid #e2e2e2;
+  height: 70px;
+  text-align: center;
+
+}

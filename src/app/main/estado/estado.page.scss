@@ -1,0 +1,15 @@
+.scrollable-list {
+  max-height: 400px;  // Limitar la altura para hacer la lista desplazable
+  overflow-y: auto;   // Habilitar el scroll vertical
+}
+
+.card-open {
+  background-color: #a5d6a7; /* Verde claro */
+  transition: background-color 0.3s;
+}
+
+.card-closed {
+  background-color: #e0e0e0; /* Gris claro */
+  transition: background-color 0.3s;
+}
+

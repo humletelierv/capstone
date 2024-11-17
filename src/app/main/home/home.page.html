@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Inicio</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="goToConfiguracionUsuario()">
+        <ion-icon slot="icon-only" name="person-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Título de bienvenida con nombre de usuario -->
+  <h1 class="welcome-title">Bienvenido, {{ username$ | async }}</h1>
+
+  <!-- Botones de navegación -->
+  <div class="buttons-container">
+    <ion-button expand="full" size="large" (click)="goToProcesos()">Procesos</ion-button>
+    <ion-button expand="full" size="large" (click)="goToInformes()">Informes</ion-button>
+    <ion-button expand="full" size="large" (click)="goToEstado()">Estado</ion-button>
+  </div>
+</ion-content>

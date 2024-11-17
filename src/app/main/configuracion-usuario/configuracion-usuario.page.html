@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Configuración de Usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <!-- Mostrar este ítem solo si el usuario es admin -->
+    <ion-item *ngIf="isAdmin" (click)="goToGestionUsuarios()">
+      <ion-label>Gestionar Usuarios</ion-label>
+    </ion-item>
+
+     <!-- Botón para cerrar sesión -->
+     <ion-item (click)="logout()">
+      <ion-label color="danger">Cerrar sesión</ion-label>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

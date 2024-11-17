@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalle del Batch</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="batch">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Información de Producción - Batch {{ batch.batch }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>Fecha de Horneo: {{ batch.fecha_horneo | date: 'dd-MM-yyyy' }}</p>
+      <p>Variedad: {{ batch.tipo_variedad }}</p>
+      <p>Cebada Limpia: {{ batch.cebada_limpia }} kg</p>
+      <p>Cebada Sucia: {{ batch.cebada_sucia }} kg</p>
+      <p>Impureza: {{ batch.impureza }} %</p>
+      <p>Polvo: {{ batch.polvo }} %</p>
+      <p>Malta Sucia: {{ batch.malta_sucia }} kg</p>
+      <p>Brote: {{ batch.brote }} %</p>
+      <p>Malta Limpia: {{ batch.malta_limpia }} kg</p>
+      <p>Malta Verde: {{ batch.malta_verde }} kg</p>
+      <p>Materia Seca: {{ batch.materiaseca }} %</p>
+      <p>Malta Equivalente: {{ batch.malta_equivalente }} kg</p>
+      <p>Fecha de Volteo: {{ batch.fecha_volteo | date: 'dd-MM-yyyy' }}</p>
+      <p>Fecha de Pulido: {{ batch.fecha_pulido | date: 'dd-MM-yyyy' }}</p>
+      <p>Electricidad: {{ batch.electricidad }} kWh</p>
+      <p>Gas: {{ batch.gas }} m³</p>
+      <p>Agua: {{ batch.agua }} m³</p>
+      <p>CS/CL: {{ batch.cs_cl }} %</p>
+      <p>CL/ML: {{ batch.cl_ml }} %</p>
+      <p>Brote ML: {{ batch.brote_ml }} %</p>
+      <p>MS/ML: {{ batch.ms_ml }} %</p>
+      <p>CS/ML: {{ batch.cs_ml }} %</p>
+      <p>CL/MS: {{ batch.cl_ms }} %</p>
+      <p>Factor de Pérdida de Humedad: {{ batch.factor_perdida_humedad }} %</p>
+      <p>Factor de Pérdida de Conversión: {{ batch.factor_perdida_conversion }} %</p>
+      <p>KG Pérdida Humedad: {{ batch.kg_perdida_humedad }} kg</p>
+      <p>KG Pérdida Conversión: {{ batch.kg_perdida_conversion }} kg</p>
+      <p>Silo Destino 1: {{ batch.silo_destino_1 }}</p>
+      <p>KG Destino 1: {{ batch.kg_destino_1 }} kg</p>
+      <p>Silo Destino 2: {{ batch.silo_destino_2 || 'No especificado' }}</p>
+      <p>KG Destino 2: {{ batch.kg_destino_2 || 'No especificado' }} kg</p>
+      <p>KG Silo Origen 1: {{ batch.kg_silo_origen_1 }} kg</p>
+      <p>Silo Origen 1: {{ batch.silo_origen_1 }} kg</p>
+      <p>KG Silo Origen 2: {{ batch.kg_silo_origen_2 }} kg</p>
+      <p>Silo Origen 2: {{ batch.silo_origen_2 }} kg</p>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
+<ion-content *ngIf="!batch">
+  <p style="text-align: center; margin-top: 20px;">Cargando...</p>
+</ion-content>

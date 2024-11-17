@@ -1,0 +1,38 @@
+<ion-header >
+  <ion-toolbar class="headerArriba">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+
+  <div class="image-container">
+    <ion-img src="../../../assets/img/logo-web-3.jpg" alt="maltexco logo" class="image-inside"></ion-img>
+  </div>
+
+  <div class="main-content">
+    <ion-card style="text-align:center; margin-left: 20%; margin-right: 20%;">
+      <form [formGroup]="formInic">
+
+        <!-- Campo de usuario -->
+        <ion-item  >
+          <ion-label position="stacked" style="margin: 10px; font-size: 20px;" > Usuario</ion-label>
+          <ion-input type="text" formControlName="username" placeholder="Ingrese el usuario" class="input-item"></ion-input>
+        </ion-item>
+
+        <!-- Campo de contraseña -->
+        <ion-item >
+          <ion-label position="stacked" style="margin: 10px; font-size: 20px;">Contraseña</ion-label>
+          <ion-input type="password" formControlName="password" placeholder="Ingrese la contraseña" class="input-item"></ion-input>
+        </ion-item>
+
+        <!-- Botón para iniciar sesión -->
+        <ion-button expand="block" type="submit" (click)="onLogin()" class="boton-iniciar-sesion" style="margin: 40px;">Iniciar sesión</ion-button>
+
+      </form>
+
+    </ion-card>
+  </div>
+
+
+</ion-content>
