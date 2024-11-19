@@ -4,10 +4,13 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">procesos</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding" [fullscreen]="true">
+  <!-- Título de bienvenida con nombre de usuario -->
+  <h1 class="welcome-title">Lista de procesos</h1>
+
+  <!-- Botones de navegación -->
+  <div class="buttons-container">
+    <ion-button expand="full" size="large" (click)="goToInfoTina()">Procesos</ion-button>
+
+  </div>
 </ion-content>

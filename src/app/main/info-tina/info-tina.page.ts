@@ -138,7 +138,13 @@ export class InfoTinaPage implements OnInit {
   }
 
   goBack() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/procesos']); // Navega a la página 'home' o cualquier página específica
+  }
+  goHome() {
+    this.router.navigate(['/home']); // Navega a la página 'home' o cualquier página específica
+  }
+  goUser() {
+    this.router.navigate(['/configuracion-usuario']); // Navega a la página 'home' o cualquier página específica
   }
 
   goToBatchDetails(batch: Tina) {

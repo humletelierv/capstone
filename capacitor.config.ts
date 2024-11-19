@@ -1,9 +1,15 @@
-import type { CapacitorConfig } from '@capacitor/cli';
+import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'maltechnology.com',
   appName: 'maltechnology',
-  webDir: 'www'
+  webDir: 'www',
+  bundledWebRuntime: false,
+  plugins: {
+    Http: {
+      allowInsecureConnections: true, // Habilita conexiones inseguras
+    },
+  },
 };
 
 export default config;
