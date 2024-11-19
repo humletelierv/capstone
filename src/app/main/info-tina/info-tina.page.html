@@ -10,7 +10,7 @@
       <ion-img src="../../../assets/img/logo-web-3.jpg" alt="maltexco logo" class="image-inside"></ion-img>
     </div>
     <ion-toolbar>
-      <ion-title style="text-align: center;">Estado de Batch</ion-title>
+      <ion-title style="text-align: center;">Estado de Batch en TINA</ion-title>
     </ion-toolbar>
     <ion-toolbar>
       <ion-searchbar
@@ -24,6 +24,7 @@
 </ion-header>
 
 <ion-content>
+
 
   <!-- Spinner mientras se cargan los datos -->
   <ion-spinner *ngIf="loading && !errorMessage" name="crescent" style="margin: 20px auto; display: block;"></ion-spinner>
@@ -61,8 +62,10 @@
           (click)="goToBatchDetails(batch)">
           <ion-label>
             <h2>Batch: {{ batch.batch }}</h2>
-            <p>Variedad: {{ batch.tipo_variedad }}</p>
-            <p>Fecha de Horneo: {{ batch.fecha_horneo | date: 'dd-MM-yyyy' }}</p>
+            <p>Hora: {{ batch.hora | date: 'hh-mm-ss' }}</p>
+            <p>Estado tina: {{ getEstadoTinaDescripcion(batch.id_estado_tina) }}</p>
+            <p>Temperatura tina N°1: {{ batch.temptina1 }}</p>
+            <p>Temperatura tina N°2: {{ batch.temptina2 }}</p>
           </ion-label>
         </ion-item>
       </ion-list>
@@ -75,20 +78,3 @@
   </ng-template>
 </ion-content>
 
-<!-- Tabs flotantes -->
-<div>
-  <ion-tab-bar class="custom-tab-bar">
-    <ion-tab-button (click)="goBack()">
-      <ion-icon name="arrow-back-circle-outline"></ion-icon>
-      <ion-label>Volver</ion-label>
-    </ion-tab-button>
-    <ion-tab-button (click)="goHome()">
-      <ion-icon name="home-outline"></ion-icon>
-      <ion-label>Inicio</ion-label>
-    </ion-tab-button>
-    <ion-tab-button (click)="goUser()">
-      <ion-icon name="person-circle-outline"></ion-icon>
-      <ion-label>Usuario</ion-label>
-    </ion-tab-button>
-  </ion-tab-bar>
-</div>

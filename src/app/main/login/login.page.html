@@ -2,14 +2,13 @@
   <ion-toolbar class="headerArriba">
   </ion-toolbar>
 </ion-header>
-
-<ion-content class="ion-padding">
-
-
+<ion-header>
   <div class="image-container">
     <ion-img src="../../../assets/img/logo-web-3.jpg" alt="maltexco logo" class="image-inside"></ion-img>
   </div>
+</ion-header>
 
+<ion-content class="ion-padding">
   <div class="main-content">
     <ion-card style="text-align:center; margin-left: 20%; margin-right: 20%;">
       <form [formGroup]="formInic">
@@ -28,9 +27,7 @@
 
         <!-- Botón para iniciar sesión -->
         <ion-button expand="block" type="submit" (click)="onLogin()" class="boton-iniciar-sesion" style="margin: 40px;">Iniciar sesión</ion-button>
-
       </form>
-
     </ion-card>
   </div>
 

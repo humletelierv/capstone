@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+
 import { IonicModule } from '@ionic/angular';
-import { EstadoPageRoutingModule } from './estado-routing.module';
-import { EstadoPage } from './estado.page';
+
+import { InfoTinaPageRoutingModule } from './info-tina-routing.module';
+
+import { InfoTinaPage } from './info-tina.page';
 import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
@@ -11,9 +14,9 @@ import { SharedModule } from '../../shared/shared.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    SharedModule,
-    EstadoPageRoutingModule
+    InfoTinaPageRoutingModule,
+    SharedModule
   ],
-  declarations: [EstadoPage]
+  declarations: [InfoTinaPage]
 })
-export class EstadoPageModule {}
+export class InfoTinaPageModule {}

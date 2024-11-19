@@ -1,0 +1,13 @@
+.headerArriba{
+  --background: #ae4a4a; /* Cambia a tu color deseado */
+  --color: white; /* Color del texto en el header */
+  height: 100px; /* Ajusta a la altura que desees */
+
+}
+.image-container {
+  display: flex; /* Configura un contenedor flexible */
+  justify-content: center; /* Centra horizontalmente */
+  //align-items: center; /* Centra verticalmente */
+  height: 100px; /* Altura opcional del contenedor */
+  margin-top: 5px;
+}

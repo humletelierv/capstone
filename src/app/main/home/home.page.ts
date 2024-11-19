@@ -16,6 +16,16 @@ export class HomePage implements OnInit {
   ngOnInit() {
     this.username$ = this.authService.username$;  // Suscribimos el observable al BehaviorSubject del AuthService
   }
+  logout() {
+    this.authService.logout();  // Llama al método de logout en AuthService
+    this.router.navigateByUrl('/login');  // Redirige a la página de login
+  }
+  goHome() {
+    this.router.navigate(['/home']); // Navega a la página 'home' o cualquier página específica
+  }
+  goUser() {
+    this.router.navigate(['/configuracion-usuario']); // Navega a la página 'home' o cualquier página específica
+  }
 
   // Función para navegar a la página de Configuración de Usuario
   goToConfiguracionUsuario() {
@@ -27,9 +37,9 @@ export class HomePage implements OnInit {
     this.router.navigateByUrl('/estado');
   }
 
-  // Las funciones goToProcesos y goToInformes se pueden implementar más tarde
-  goToProcesos() {
-    console.log('Redirigiendo a Procesos');  // Implementar la navegación más tarde
+   // Función para navegar a la página Estado
+   goToProcesos() {
+    this.router.navigateByUrl('/procesos');
   }
 
   goToInformes() {

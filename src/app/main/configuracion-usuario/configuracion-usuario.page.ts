@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-configuracion-usuario',
@@ -10,7 +11,11 @@ import { Router } from '@angular/router';
 export class ConfiguracionUsuarioPage implements OnInit {
   isAdmin: boolean = false;  // Variable para controlar si el usuario es admin
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private location: Location
+    ) {}
 
   async ngOnInit() {
     // // Obtener el usuario logueado y verificar el rol
@@ -20,6 +25,15 @@ export class ConfiguracionUsuarioPage implements OnInit {
     // } else {
     //   this.router.navigateByUrl('/login');  // Redirigir si no hay usuario logueado
     // }
+  }
+  goBack() {
+    this.location.back(); // Navegar a la página anterior
+  }
+  goHome() {
+    this.router.navigate(['/home']); // Navega a la página 'home' o cualquier página específica
+  }
+  goUser() {
+    this.router.navigate(['/configuracion-usuario']); // Navega a la página 'home' o cualquier página específica
   }
 
   goToGestionUsuarios() {

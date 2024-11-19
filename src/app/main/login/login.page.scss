@@ -74,13 +74,15 @@ h2{
   justify-content: center; /* Centra horizontalmente */
   //align-items: center; /* Centra verticalmente */
   height: 100px; /* Altura opcional del contenedor */
+  margin-top: 5px;
 }
 
-.image-inside {
-  width: 250px;
-  height: 250px;
-  //border-radius: 8px;
-}
+// .image-inside {
+//   width: 250px;
+//   height: 250px;
+//   //border-radius: 8px;
+// }
+
 
 .parent-content {
   display: flex;

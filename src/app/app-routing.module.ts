@@ -35,10 +35,22 @@ const routes: Routes = [
     canActivate: [AuthGuard], // Protege la ruta con el AuthGuard
   },
   {
+    path: 'info-tina',
+    loadChildren: () => import('./main/info-tina/info-tina.module').then( m => m.InfoTinaPageModule),
+    canActivate: [AuthGuard], // Protege la ruta con el AuthGuard
+  },
+  {
     path: 'detallebatch/:NumeroBatch',  // Ruta con parámetro para los detalles del batch
     loadChildren: () => import('./main/detallebatch/detallebatch.module').then(m => m.DetallebatchPageModule),
     canActivate: [AuthGuard], // Protege la ruta con el AuthGuard
   },
+  {
+    path: 'procesos',
+    loadChildren: () => import('./main/procesos/procesos.module').then( m => m.ProcesosPageModule),
+    canActivate: [AuthGuard], // Protege la ruta con el AuthGuard
+
+  },
+
 ];
 
 @NgModule({

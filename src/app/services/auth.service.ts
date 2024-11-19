@@ -4,6 +4,7 @@ import { Observable, BehaviorSubject, from } from 'rxjs';
 import { map, switchMap, tap } from 'rxjs/operators';
 import { Storage } from '@ionic/storage-angular';
 import { Batch } from '../interface/batch';
+import { Tina } from '../interface/info-tina'
 
 
 @Injectable({
@@ -29,24 +30,6 @@ export class AuthService {
       this.usernameSubject.next(username);
     }
   }
-
-  // // Método para iniciar sesión y actualizar el BehaviorSubject
-  // login(username: string, password: string): Observable<UsuarioId | null> {
-  //   return this.http.get<UsuarioId[]>(`${this.apiUrl}/usuarios`).pipe(
-  //     map((usuarios) => {
-  //       const user = usuarios.find(
-  //         (u) => u.username === username && u.password === password
-  //       );
-  //       if (user) {
-  //         // Guardamos el usuario en Ionic Storage
-  //         this.storage?.set('user', user);
-  //         this.usernameSubject.next(user.username);  // Actualizamos el BehaviorSubject con el nombre de usuario
-  //       }
-  //       return user || null;
-  //     })
-  //   );
-  // }
-
 
   // Método para iniciar sesión y actualizar el BehaviorSubject
   login(username: string, password: string): Observable<any> {
@@ -119,24 +102,7 @@ export class AuthService {
     return this.http.get(`${this.apiUrl}/usuarios/`, { headers }).toPromise();
   }
 
-//   // Método para actualizar el estado de actividad del usuario
-//   updateActividad(username: string, actividad: string): Observable<UsuarioId | null> {
-//     return this.http.get<UsuarioId[]>(`${this.apiUrl}/usuarios`).pipe(
-//       switchMap((usuarios) => {
-//         const user = usuarios.find((u) => u.username === username);
-//         if (user) {
-//           const updatedUser = { ...user, actividad };
 
-//           // Hacemos una solicitud PUT para actualizar el usuario
-//           return this.http.put<UsuarioId>(`${this.apiUrl}/usuarios/${user.rut}`, updatedUser);
-//         }
-//         return new Observable<UsuarioId | null>((observer) => {
-//           observer.next(null);
-//           observer.complete();
-//         });
-//       })
-//     );
-//   }
 
 // // Método para obtener todos los Batch
 // getBatches(): Observable<any[]> {
@@ -160,6 +126,37 @@ getBatches(): Observable<Batch[]> {
     })
   );
 }
+
+// Método GET para obtener los datos con token
+getInfoTina(): Observable<Tina[]> {
+  return from(this.storage.get('access_token')).pipe(
+    switchMap((token) => {
+      const headers = new HttpHeaders({
+        Authorization: `Bearer ${token}`,
+      });
+
+      return this.http.get<Tina[]>(`${this.apiUrl}/info-tina/`, {
+        headers,
+      });
+    })
+  );
+}
+
+// Método GET para obtener los datos con token
+infoHorno(): Observable<Batch[]> {
+  return from(this.storage.get('access_token')).pipe(
+    switchMap((token) => {
+      const headers = new HttpHeaders({
+        Authorization: `Bearer ${token}`,
+      });
+
+      return this.http.get<Batch[]>(`${this.apiUrl}/info-horno/`, {
+        headers,
+      });
+    })
+  );
+}
+
 
 // auth.service.ts
 async isAuthenticated(): Promise<boolean> {
