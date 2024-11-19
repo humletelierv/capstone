@@ -1,0 +1,211 @@
+/* Header */
+ion-toolbar {
+  --background: linear-gradient(90deg, #3e2723, #5d4037); /* Degradado marrón elegante */
+  --color: #ffffff; /* Texto blanco */
+  height: 80px;
+  font-size: 1.6em; /* Tamaño de fuente grande */
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Sombra más fuerte */
+  border-bottom: 4px solid #5d4037; /* Línea más oscura */
+  animation: fadeIn 1s ease-out; /* Animación suave */
+}
+
+/* Fondo del contenido */
+ion-content {
+  background: linear-gradient(to bottom, #bbdefb, #1976d2); /* Fondo azul oscuro */
+  padding: 20px;
+  animation: fadeIn 1s ease-out; /* Animación de entrada */
+}
+
+/* Tarjeta */
+ion-card {
+  background: #e3f2fd; /* Azul claro */
+  border-radius: 20px; /* Bordes más redondeados */
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.3); /* Sombra más profunda */
+  margin-bottom: 30px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: zoomIn 0.6s ease-out; /* Animación de zoom */
+}
+
+ion-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4); /* Más sombra al hover */
+}
+
+/* Título de la tarjeta (Detalles) */
+ion-card-header {
+  background: linear-gradient(to right, #1976d2, #1565c0); /* Fondo azul degradado */
+  color: #ffffff; /* Texto blanco */
+  padding: 25px; /* Espaciado interno */
+  text-align: center; /* Centrar texto */
+  font-size: 0.8em; /* Tamaño del texto */
+  font-weight: bold; /* Negrita */
+  text-transform: uppercase; /* Mayúsculas */
+  letter-spacing: 1.2px; /* Espaciado entre letras */
+  margin-bottom: 20px;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+  transition: transform 0.3s ease;
+}
+
+ion-card-header:hover {
+  transform: translateY(-5px); /* Efecto de elevarse al pasar el mouse */
+}
+
+/* Contenido de la tarjeta */
+ion-card-content {
+  padding: 30px;
+  font-size: 1.1em; /* Tamaño de texto moderado */
+  line-height: 1.6;
+  color: #0d47a1; /* Azul oscuro */
+  background: #e3f2fd; /* Azul claro */
+  border-radius: 15px;
+  box-shadow: inset 0px 3px 8px rgba(0, 0, 0, 0.2); /* Sombra interna */
+  transition: background 0.3s ease;
+}
+
+ion-card-content:hover {
+  background: #bbdefb; /* Cambio de fondo al hover */
+}
+
+/* Estilo para los párrafos */
+ion-card-content p {
+  margin: 15px 0;
+  padding: 15px;
+  background: #bbdefb; /* Fondo azul claro */
+  border-left: 4px solid #1976d2; /* Barra azul oscuro */
+  border-radius: 8px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  color: #0d47a1; /* Azul oscuro */
+  font-size: 0.9em; /* Tamaño de fuente más pequeño */
+  font-family: 'Roboto', sans-serif; /* Fuente moderna */
+  letter-spacing: 0.5px; /* Espaciado sutil entre letras */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+ion-card-content p:hover {
+  transform: scale(1.02); /* Efecto de aumento */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Sombra al hover */
+  background: #90caf9; /* Fondo azul claro al hover */
+}
+
+/* Botones de acción */
+ion-button {
+  --background: #1565c0; /* Azul oscuro */
+  --color: #ffffff;
+  border-radius: 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más oscura */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 12px 25px;
+}
+
+ion-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4); /* Más sombra */
+  --background: #0d47a1; /* Azul más oscuro */
+}
+
+/* Estilo de la fecha y número */
+ion-card-title {
+  color: #ffffff; /* Texto blanco */
+  font-size: 1.2em; /* Tamaño más pequeño */
+  font-weight: 500; /* Peso moderado */
+  text-align: center;
+  margin-top: 15px;
+  font-family: 'Roboto', sans-serif; /* Fuente moderna */
+  letter-spacing: 1px; /* Espaciado entre letras */
+  text-transform: capitalize; /* Convertir la fecha a formato de título */
+}
+
+/* Añadir estilo para la sección de Batch */
+ion-list {
+  background: #f8bbd0; /* Fondo rosa claro */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+  padding: 20px;
+  margin-top: 20px;
+}
+
+ion-item {
+  background: #ffffff; /* Fondo blanco */
+  border-radius: 10px; /* Bordes redondeados */
+  margin-bottom: 15px; /* Separación entre ítems */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+ion-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2); /* Más sombra al hover */
+}
+
+/* Mejorar la tipografía de la información de Batch */
+ion-label {
+  color: #0d47a1; /* Color azul oscuro */
+  font-size: 0.9em; /* Tamaño de texto más pequeño */
+  font-weight: 500; /* Peso moderado */
+  padding: 15px; /* Espaciado interno */
+  line-height: 1.6; /* Altura de línea */
+  text-align: left; /* Alinear texto a la izquierda */
+}
+
+ion-label h2,
+ion-label p {
+  background: #e8f5e9; /* Fondo verde claro */
+  border-left: 5px solid #388e3c; /* Barra verde oscuro */
+  padding: 12px;
+  border-radius: 8px;
+  margin: 8px 0;
+  box-shadow: inset 0px 3px 6px rgba(0, 0, 0, 0.1); /* Sombra interna */
+  color: #0d47a1; /* Azul oscuro */
+  font-size: 0.9em; /* Tamaño de fuente más pequeño */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover en los detalles */
+ion-label:hover h2,
+ion-label:hover p {
+  background: #c8e6c9; /* Fondo verde más fuerte */
+  color: #ffffff; /* Texto blanco */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Sombra externa */
+  transform: scale(1.02); /* Ligero aumento */
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividad */
+@media screen and (max-width: 768px) {
+  ion-card-title {
+    font-size: 1em; /* Reducir tamaño de la fecha */
+  }
+
+  ion-card-content {
+    padding: 20px;
+  }
+
+  ion-card-content p {
+    font-size: 0.9em; /* Reducir tamaño del texto */
+  }
+
+  ion-label h2,
+  ion-label p {
+    font-size: 0.85em; /* Reducir tamaño de la fuente */
+  }
+
+  ion-toolbar {
+    font-size: 1.2em;
+  }
+}

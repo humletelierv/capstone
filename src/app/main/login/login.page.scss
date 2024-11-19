@@ -1,99 +1,240 @@
+/* Estilos generales */
+body {
+  background-color: #f7f7f7; /* Fondo gris claro y suave para mayor elegancia */
+  color: #333333; /* Texto oscuro para contraste y legibilidad */
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif; /* Fuente moderna y limpia */
+}
+
+/* Estilo para ion-note */
 ion-note {
-  color: red;
-  font-size: 14px;
-  margin-top: 5px;
+  color: #d32f2f; /* Rojo más suave para los mensajes de advertencia */
+  font-size: 16px;
+  margin-top: 8px;
+  font-weight: 600;
   display: block;
+  line-height: 1.5;
 }
 
-h1{
-  font-size: small;
-}
-h2{
-  font-family: 'Times New Roman', Times, serif;
-  font-size: x-large;
-}
-
-.headerArriba{
-  --background: #ae4a4a; /* Cambia a tu color deseado */
-  --color: white; /* Color del texto en el header */
-  height: 100px; /* Ajusta a la altura que desees */
-
+/* Títulos */
+h1 {
+  font-size: 1.5em;
+  text-align: center;
+  color: #2c3e50; /* Gris oscuro elegante */
+  font-family: 'Roboto', sans-serif; /* Fuente moderna */
+  font-weight: 700; /* Negrita */
+  margin-top: 30px;
+  text-transform: capitalize; /* Primer letra en mayúscula */
 }
 
-.boton-iniciar-sesion{
-  --background:black;
-  --color:white;
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2em;
+  color: #7f8c8d; /* Gris suave para títulos secundarios */
+  font-weight: 400;
 }
 
-.center-container {
+/* Header */
+.headerArriba {
+  --background: linear-gradient(90deg, #c0392b, #e74c3c); /* Degradado elegante en tonos rojos */
+  --color: white; /* Texto blanco */
+  height: 90px; /* Altura ajustada */
   display: flex;
-  justify-content: center; /* Centrar horizontalmente */
-  align-items: center; /* Centrar verticalmente */
-  height: 100%; /* Asegúrate de que el contenedor tenga altura suficiente */
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Sombra fuerte */
+  transition: background-color 0.3s ease;
 }
 
-.rounded-input ion-input {
-  --background: #ffffff; /* Fondo blanco */
-  --border-radius: 10px; /* Bordes redondeados */
-  --padding-start: 10px; /* Espaciado interno */
-  --padding-end: 10px; /* Espaciado interno */
-  border: 1px solid #dcdcdc; /* Borde gris claro */
-  margin: 10px 0; /* Espaciado externo */
-  border-radius: 15px; /* Bordes redondeados */
-
+.headerArriba:hover {
+  --background: #e74c3c; /* Rojo más fuerte al hover */
 }
 
-.rounded-input ion-label {
-  color: #333; /* Color del label */
-  font-weight: bold; /* Negrita */
-  font-size: 25px;
-}
-
+/* Contenedor principal */
 .main-content {
-  // display: flex;
-  //height: 500vw;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 16px;
-  background-color: #ffffff; /* Fondo del contenido principal */
-  overflow: hidden; /* Evita desbordamientos */
-  margin-top: 150px;
-  position:static;
-
-
+  padding: 32px;
+  background: #ffffff; /* Fondo blanco brillante */
+  border-radius: 30px;
+  margin-top: 50px;
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.15); /* Sombra sutil para profundidad */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.no-scroll {
-  height: calc(100vh - var(--ion-toolbar-height) * 2); /* Altura completa menos header y footer */
-  overflow: hidden; /* Elimina el desplazamiento */
+.main-content:hover {
+  box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.2); /* Más sombra al hover */
+  transform: translateY(-6px); /* Suave movimiento hacia arriba */
 }
 
+/* Contenedor del logo */
 .image-container {
-  display: flex; /* Configura un contenedor flexible */
-  justify-content: center; /* Centra horizontalmente */
-  //align-items: center; /* Centra verticalmente */
-  height: 100px; /* Altura opcional del contenedor */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  background: #ffffff;
+  border-radius: 50%;
+  padding: 30px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
+  animation: fadeIn 1s ease-out;
 }
 
 .image-inside {
-  width: 250px;
-  height: 250px;
-  //border-radius: 8px;
+  width: 150px;
+  height: auto;
 }
 
-.parent-content {
-  display: flex;
-  width: 100%; /* Asegura que el contenedor padre ocupe todo el espacio */
-  height: 100%; /* Asegura que también abarque toda la altura si es necesario */
-}
-
-.input-item{
-  //padding-left: 20px;
-  width: 100%;
-  border-radius: 30px;
-  border: 2px solid #e2e2e2;
-  height: 70px;
+/* Título de bienvenida */
+.welcome-title {
+  font-size: 2.2em;
   text-align: center;
+  margin-top: 30px;
+  font-weight: 700;
+  color: #34495e;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  line-height: 1.2;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+/* Botones de navegación */
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons-container ion-button {
+  margin: 12px 0;
+  font-size: 1.2em;
+  font-weight: 600;
+  --background: #2980b9; /* Azul elegante */
+  --color: white;
+  border-radius: 30px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Sombra para dar profundidad */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  width: 90%;
+  max-width: 600px;
+  padding: 15px;
+}
+
+.buttons-container ion-button:hover {
+  transform: scale(1.05); /* Aumento ligero al pasar el mouse */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Sombra al hover */
+  --background: #1f618d; /* Azul más oscuro al hover */
+}
+
+/* Pantalla de carga */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo transparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOut 0.5s ease forwards;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #ccc;
+  border-top: 6px solid #4CAF50; /* Verde brillante */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loading-screen p {
+  margin-top: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #555;
+}
+
+/* Animaciones */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Responsividad */
+@media screen and (max-width: 768px) {
+  .main-content {
+    margin-top: 20px;
+    padding: 16px;
+  }
+
+  .image-container {
+    margin-top: 10px;
+  }
+
+  .image-inside {
+    width: 140px; /* Ajuste tamaño del logo */
+  }
+
+  .buttons-container ion-button {
+    font-size: 1.1em;
+    padding: 14px;
+    width: 100%;
+  }
+
+
+/* Estilo para centrar el mensaje de error */
+.error-message {
+  text-align: center; /* Centrar texto horizontalmente */
+  font-size: 14px; /* Tamaño de fuente más pequeño */
+  margin-top: 5px; /* Espaciado superior para no pegarse al campo */
+  width: 100%; /* Asegura que el ancho sea 100% del contenedor */
+}
+
+
 
 }

@@ -1,0 +1,101 @@
+/* Toolbar */
+ion-toolbar {
+  --background: #ae4a4a; /* Rojo elegante */
+  --color: #ffffff; /* Texto blanco */
+  height: 80px; /* Altura del toolbar */
+  font-size: 1.5em; /* Tamaño del título más grande */
+  font-weight: bold; /* Título en negrita */
+  text-align: center; /* Centrar el texto */
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); /* Sombra más marcada */
+  border-bottom: 3px solid #ff7961; /* Línea de acento rojo claro */
+}
+
+/* Contenedor principal */
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Espaciado entre elementos */
+  align-items: center;
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  position: relative;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+/* Fondo de la imagen */
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Coloca el fondo detrás del contenido */
+  background-image: url('../../assets/img/cebada2.png'); /* Ruta corregida */
+  background-size: cover;
+  background-position: center;
+  filter: brightness(70%) blur(2px); /* Oscurece y aplica desenfoque */
+  opacity: 0.8; /* Transparencia del fondo */
+}
+
+/* Recuadro para cerrar sesión */
+.logout-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1; /* Ocupa todo el espacio disponible */
+  width: 100%;
+}
+
+.logout-box {
+  background: rgba(255, 255, 255, 0.9); /* Fondo blanco translúcido */
+  border-radius: 15px; /* Bordes redondeados */
+  padding: 20px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Sombra profunda */
+  border: 2px solid #ae4a4a; /* Borde rojo */
+  text-align: center;
+  max-width: 300px; /* Ancho máximo */
+  width: 90%; /* Se adapta a pantallas pequeñas */
+}
+
+.logout-button {
+  --background: #ae4a4a; /* Fondo rojo elegante */
+  --color: #ffffff; /* Texto blanco */
+  font-size: 1.2em; /* Tamaño del texto */
+  font-weight: bold; /* Texto en negrita */
+  border-radius: 8px; /* Bordes redondeados */
+  width: 100%; /* Ocupa todo el ancho */
+}
+
+/* Contenedor de redes sociales */
+.social-container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9); /* Fondo translúcido */
+  padding: 15px;
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+  margin-top: 20px; /* Separación superior */
+}
+
+.social-container p {
+  font-size: 1.1rem; /* Tamaño del texto */
+  color: #333; /* Gris oscuro */
+  margin-bottom: 10px; /* Espaciado inferior */
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center; /* Centra los íconos */
+  gap: 15px; /* Espaciado entre íconos */
+}
+
+.social-icon {
+  font-size: 2rem; /* Tamaño del ícono */
+  color: #4a90e2; /* Azul para íconos */
+  cursor: pointer; /* Cambia a manita al pasar */
+  transition: transform 0.3s ease, color 0.3s ease; /* Animaciones suaves */
+}
+
+.social-icon:hover {
+  color: #2c3e50; /* Azul más oscuro */
+  transform: scale(1.2); /* Aumenta el tamaño ligeramente */
+}

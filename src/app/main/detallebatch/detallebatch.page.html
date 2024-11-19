@@ -1,13 +1,14 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Detalle del Batch</ion-title>
-  </ion-toolbar>
+
 </ion-header>
 
 <ion-content *ngIf="batch">
   <ion-card>
-    <ion-card-header>
-      <ion-card-title>Información de Producción - Batch {{ batch.batch }}</ion-card-title>
+    <!-- Se ajusta el encabezado con más margen superior -->
+    <ion-card-header style="background-color: #8B0000; text-align: center; border-radius: 10px; margin-top: 50px;">
+      <ion-card-title style="color: white; font-size: 1.8em; font-weight: bold; margin: 10px 0;">
+        Información de Producción - Batch {{ batch.batch }}
+      </ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
@@ -48,7 +49,6 @@
       <p>Silo Origen 2: {{ batch.silo_origen_2 }} kg</p>
     </ion-card-content>
   </ion-card>
-
 </ion-content>
 
 <ion-content *ngIf="!batch">

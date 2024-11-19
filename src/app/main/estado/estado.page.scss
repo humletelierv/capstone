@@ -1,15 +1,188 @@
-.scrollable-list {
-  max-height: 400px;  // Limitar la altura para hacer la lista desplazable
-  overflow-y: auto;   // Habilitar el scroll vertical
+/* Header */
+ion-toolbar {
+  --background: linear-gradient(90deg, #ae4a4a, #ff7961); /* Degradado rojo elegante */
+  --color: #ffffff; /* Texto blanco */
+  height: 80px; /* Altura del toolbar */
+  font-size: 1.6em; /* Tamaño del título más grande */
+  font-weight: bold; /* Título en negrita */
+  text-align: center; /* Centrar el texto */
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); /* Sombra más marcada */
+  border-bottom: 4px solid #d32f2f; /* Línea de acento rojo oscuro */
 }
 
-.card-open {
-  background-color: #a5d6a7; /* Verde claro */
-  transition: background-color 0.3s;
+/* Fondo del contenido */
+ion-content {
+  background: #e3f2fd; /* Fondo azul claro */
+  padding: 20px; /* Espaciado general */
+  animation: fadeIn 1s ease-out; /* Animación de entrada */
 }
 
-.card-closed {
-  background-color: #e0e0e0; /* Gris claro */
-  transition: background-color 0.3s;
+/* Tarjeta */
+ion-card {
+  background: #ffffff; /* Fondo blanco */
+  border-radius: 20px; /* Bordes redondeados */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Sombra más profunda */
+  margin-bottom: 30px; /* Espaciado inferior */
+  overflow: hidden; /* Evitar desbordamientos */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animaciones suaves */
 }
 
+ion-card:hover {
+  transform: scale(1.05); /* Ligero aumento al pasar el mouse */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4); /* Más sombra al hover */
+}
+
+/* Título de la tarjeta (Detalles) */
+ion-card-header {
+  background: linear-gradient(to right, #1976d2, #1565c0); /* Fondo degradado azul */
+  color: #ffffff; /* Texto blanco */
+  padding: 25px; /* Espaciado interno */
+  text-align: center; /* Centrar texto */
+  font-size: 1.6em; /* Tamaño más grande */
+  font-weight: bold; /* Texto en negrita */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  letter-spacing: 1.2px; /* Espaciado entre letras */
+  margin-bottom: 20px; /* Separación del contenido */
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+}
+
+/* Contenido de las tarjetas */
+ion-card-content {
+  padding: 30px; /* Espaciado interno */
+  font-size: 1.2em; /* Tamaño del texto más grande */
+  line-height: 1.8; /* Altura de línea */
+  color: #ffffff; /* Texto blanco */
+  background: #1565c0; /* Fondo azul oscuro */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: inset 0px 3px 8px rgba(0, 0, 0, 0.2); /* Sombra interna */
+}
+
+/* Lista de detalles con tonos rojizos */
+ion-list {
+  background: #ffebee; /* Fondo rojo muy claro */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+  padding: 20px; /* Espaciado interno */
+  margin-top: 15px; /* Separación de la tarjeta */
+}
+
+/* Detalles de Batch */
+ion-item {
+  background: #ffffff; /* Fondo blanco */
+  border-radius: 10px; /* Bordes redondeados */
+  margin-bottom: 15px; /* Separación entre ítems */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+ion-item:hover {
+  transform: scale(1.03); /* Ligero aumento al hover */
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2); /* Más sombra al hover */
+}
+
+/* Etiquetas dentro del detalle */
+ion-label {
+  color: #010813; /* Texto azul oscuro (igual que el texto del search) */
+  font-size: 1.2em; /* Tamaño de texto */
+  font-weight: bold; /* Texto en negrita */
+  padding: 15px; /* Espaciado interno */
+  line-height: 1.6; /* Altura de línea */
+}
+
+/* Detalles resaltados */
+ion-label h2,
+ion-label p {
+  background: #ffcdd2; /* Fondo rosado claro */
+  border-left: 5px solid #d32f2f; /* Barra roja elegante */
+  padding: 12px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  margin: 8px 0; /* Separación entre líneas */
+  box-shadow: inset 0px 3px 6px rgba(0, 0, 0, 0.1); /* Sombra interna */
+}
+
+/* Hover en los detalles */
+ion-label:hover h2,
+ion-label:hover p {
+  background: #e57373; /* Fondo rojizo más fuerte */
+  color: #ffffff; /* Texto blanco */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Sombra externa */
+  transform: scale(1.02); /* Ligero aumento */
+}
+
+/* Estilo para el título de la fecha */
+ion-card-title {
+  font-size: 1.2em; /* Tamaño de texto más pequeño */
+  font-weight: bold; /* Texto en negrita */
+  color: #ffffff; /* Texto blanco */
+  padding: 10px; /* Espaciado interno */
+  background: #1976d2; /* Fondo azul oscuro */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  text-align: center; /* Centrar texto */
+  max-width: 95%; /* Ajustar para que no sobresalga */
+  margin: 0 auto; /* Centrar el título */
+}
+
+/* Efecto hover para el título de la fecha */
+ion-card-title:hover {
+  background: #1565c0; /* Azul más oscuro al hover */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Más sombra */
+  transform: scale(1.02); /* Ligero aumento */
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividad */
+@media screen and (max-width: 768px) {
+  ion-card-header {
+    font-size: 1.4em; /* Reducir tamaño del título */
+  }
+
+  ion-item {
+    font-size: 1em; /* Reducir tamaño del texto en ítems */
+  }
+
+  ion-card-content {
+    padding: 20px; /* Reducir padding */
+  }
+
+  ion-card-title {
+    font-size: 1em; /* Reducir tamaño del texto en la tarjeta */
+  }
+}
+
+/* Estilo para el search */
+ion-searchbar {
+  --background: #bbdefb; /* Azul claro para el fondo */
+  --color: #0d47a1; /* Color del texto en el search */
+  --placeholder-color: #098efb; /* Color para el texto del placeholder */
+  --border-radius: 10px; /* Bordes redondeados */
+  --padding-start: 12px; /* Ajustar el padding para que no quede tan pegado */
+  --padding-end: 12px; /* Ajuste de padding */
+  --height: 45px; /* Altura ajustada */
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+ion-searchbar:focus {
+  --background: #64b5f6; /* Fondo azul más claro al enfocarse */
+  --border-color: #1565c0; /* Borde azul más fuerte */
+}
+
+ion-searchbar input {
+  font-size: 1em; /* Ajustar el tamaño de la fuente */
+  font-weight: normal; /* Para mantener el texto con un peso estándar */
+}
+
+ion-searchbar::-webkit-search-cancel-button {
+  color: #0d47a1; /* Color del botón de cancelar búsqueda */
+}

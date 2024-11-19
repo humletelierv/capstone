@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Inicio</ion-title>
+  <ion-toolbar class="headerArriba">
+    <!-- Icono de usuario -->
     <ion-buttons slot="end">
       <ion-button (click)="goToConfiguracionUsuario()">
         <ion-icon slot="icon-only" name="person-circle-outline"></ion-icon>
@@ -10,13 +10,22 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <!-- Título de bienvenida con nombre de usuario -->
-  <h1 class="welcome-title">Bienvenido, {{ username$ | async }}</h1>
+  <!-- Contenedor del logo -->
+  <div class="image-container">
+    <ion-img src="../../../assets/img/logo-web-3.jpg" alt="maltexco logo" class="image-inside"></ion-img>
+  </div>
 
-  <!-- Botones de navegación -->
-  <div class="buttons-container">
-    <ion-button expand="full" size="large" (click)="goToProcesos()">Procesos</ion-button>
-    <ion-button expand="full" size="large" (click)="goToInformes()">Informes</ion-button>
-    <ion-button expand="full" size="large" (click)="goToEstado()">Estado</ion-button>
+  <!-- Contenido principal -->
+  <div class="main-content">
+    <!-- Título de bienvenida con nombre de usuario -->
+    <h1 class="welcome-title" style="font-size: 1.0em;">Bienvenido, {{ username$ | async }}</h1>
+
+
+    <!-- Botones de navegación -->
+    <div class="buttons-container">
+      <ion-button expand="full" size="large" (click)="goToProcesos()">Procesos</ion-button>
+      <ion-button expand="full" size="large" (click)="goToInformes()">Informes</ion-button>
+      <ion-button expand="full" size="large" (click)="goToEstado()">Estado</ion-button>
+    </div>
   </div>
 </ion-content>

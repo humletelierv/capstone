@@ -12,6 +12,8 @@ import { AlertController, LoadingController, NavController } from '@ionic/angula
 })
 export class LoginPage implements OnInit {
   formInic: FormGroup;
+  isLoading: boolean = false; // Variable para controlar el estado de carga
+  submitted: boolean = false; // Para manejar la validación después de enviar el formulario
 
   constructor(
     private authService: AuthService,
@@ -30,27 +32,56 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {}
 
-  public campo(control: string){
+  // Validar si el campo tiene errores
+  public campo(control: string) {
     return this.formInic.get(control);
   }
-  public fueTocado(control: string){
+
+  // Saber si el campo fue tocado
+  public fueTocado(control: string) {
     return this.formInic.get(control).touched;
   }
 
+  // Mostrar errores dinámicamente
+  public getErrorMessage(control: string): string {
+    const campo = this.campo(control);
+    if (campo.hasError('required')) return `${control === 'username' ? 'Usuario' : 'Contraseña'} es obligatorio.`;
+    if (campo.hasError('minlength')) return `${control === 'username' ? 'Usuario' : 'Contraseña'} es muy corto.`;
+    if (campo.hasError('maxlength')) return `La contraseña es demasiado larga.`;
+    return '';
+  }
 
+  // Acción al presionar Enter
+  public onKeydown(event: KeyboardEvent): void {
+    if (event.key === 'Enter' && this.formInic.valid) {
+      this.onLogin();
+    }
+  }
+
+  // Método para iniciar sesión
   async onLogin() {
+    this.submitted = true; // Marca los campos como "tocados" después de intentar el envío
+
+    // Si el formulario es inválido, no hacer nada
+    if (this.formInic.invalid) {
+      return;
+    }
+
+    this.isLoading = true; // Inicia el estado de carga
     const loading = await this.loadingController.create({
       message: 'Iniciando sesión...',
     });
     await loading.present();
 
+    // Llamada al servicio de autenticación
     this.authService.login(this.formInic.value.username, this.formInic.value.password).subscribe(
       async () => {
+        this.isLoading = false; // Finaliza el estado de carga
         await loading.dismiss();
-        // Navega a la página principal o dashboard
-        this.navCtrl.navigateRoot('/home');
+        this.navCtrl.navigateRoot('/home'); // Navega a la página principal
       },
       async (error) => {
+        this.isLoading = false; // Finaliza el estado de carga
         await loading.dismiss();
         let message = 'Error al iniciar sesión. Inténtalo de nuevo.';
         if (error.status === 401) {
@@ -65,5 +96,4 @@ export class LoginPage implements OnInit {
       }
     );
   }
-
 }

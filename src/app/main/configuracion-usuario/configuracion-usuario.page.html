@@ -1,20 +1,30 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Configuración de Usuario</ion-title>
+  <ion-toolbar class="toolbar">
+    <ion-title class="title">Configuración de Usuario</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <!-- Mostrar este ítem solo si el usuario es admin -->
-    <ion-item *ngIf="isAdmin" (click)="goToGestionUsuarios()">
-      <ion-label>Gestionar Usuarios</ion-label>
-    </ion-item>
+<ion-content class="content">
+  <!-- Recuadro para cerrar sesión -->
+  <div class="logout-container">
+    <div class="logout-box">
+      <ion-button expand="block" class="logout-button" (click)="logout()">
+        Cerrar sesión
+      </ion-button>
+    </div>
+  </div>
 
-     <!-- Botón para cerrar sesión -->
-     <ion-item (click)="logout()">
-      <ion-label color="danger">Cerrar sesión</ion-label>
-    </ion-item>
+  <!-- Redes sociales -->
+  <div class="social-container">
+    <p>Síguenos en:</p>
+    <div class="social-icons">
+      <ion-icon name="logo-facebook" class="social-icon" (click)="openSocial('facebook')"></ion-icon>
+      <ion-icon name="logo-twitter" class="social-icon" (click)="openSocial('twitter')"></ion-icon>
+      <ion-icon name="logo-instagram" class="social-icon" (click)="openSocial('instagram')"></ion-icon>
+      <ion-icon name="logo-linkedin" class="social-icon" (click)="openSocial('linkedin')"></ion-icon>
+    </div>
+  </div>
 
-  </ion-list>
+  <!-- Fondo de cebada -->
+  <div class="background-image"></div>
 </ion-content>

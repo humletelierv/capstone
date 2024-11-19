@@ -1,16 +1,14 @@
 <ion-header>
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Estado</ion-title>
-    </ion-toolbar>
-    <ion-toolbar>
-      <ion-searchbar></ion-searchbar>
-    </ion-toolbar>
-  </ion-header>
+  <ion-toolbar>
+    <ion-title>Estado</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar placeholder="Buscar"></ion-searchbar>
 
+  </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="dark-page">
   <ion-item>
     <ion-label>Filtrar por Fecha</ion-label>
     <ion-datetime
@@ -44,11 +42,7 @@
     </ion-card>
   </ion-list>
 
-
   <ng-template #noData>
     <p style="text-align: center; margin-top: 20px;">Cargando...</p>
   </ng-template>
 </ion-content>
-
-
-

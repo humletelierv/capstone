@@ -33,4 +33,23 @@ export class ConfiguracionUsuarioPage implements OnInit {
     await this.authService.logout();  // Llama al método de logout en AuthService
     this.router.navigateByUrl('/login');  // Redirige a la página de login
   }
+
+
+  openSocial(platform: string) {
+    const urls = {
+      facebook: 'https://www.facebook.com',
+      twitter: 'https://www.twitter.com',
+      instagram: 'https://www.instagram.com',
+      linkedin: 'https://www.linkedin.com',
+    };
+
+    if (urls[platform]) {
+      window.open(urls[platform], '_blank');
+    }
+  }
+
+
+
+
+
 }
