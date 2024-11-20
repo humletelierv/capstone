@@ -1,0 +1,50 @@
+export interface Batch {
+  batch: number;
+  id_tipo_malta: number;
+  id_tipo_horno: number;
+  fecha_horneo: Date;
+  tipo_variedad: string;
+  cebada_limpia: number;
+  cebada_sucia: number;
+  falla: number;
+  impureza: number;
+  polvo: number;
+  malta_sucia: number;
+  brote: number;
+  pijilla_malta: number;
+  malta_limpia: number;
+  malta_verde: number;
+  malta_equivalente: number;
+  materiaseca: number;
+  fecha_volteo: Date;
+  kg_silo_origen_1: number;
+  silo_origen_1: number;
+  kg_silo_origen_2: number;
+  silo_origen_2: number;
+  fecha_pulido: Date;
+  silo_destino_1: string;
+  kg_destino_1: number;
+  silo_destino_2?: string; // Opcional
+  kg_destino_2?: number;   // Opcional
+  electricidad: number;
+  agua: number;
+  gas: number;
+  cs_ci: number;
+  ci_mi: number;
+  cl_ms: number;
+  cs_cl: number;
+  cl_ml:number;
+  cs_ml: number;
+  ms_ml: number;
+  brote_ml: number;
+  factor_perdida_humedad: number;
+  factor_perdida_conversion: number;
+  kg_perdida_humedad: number;
+  kg_perdida_conversion: number;
+  factor_carbon: number;
+  factor_electricidad: number;
+  factor_agua: number;
+  info_germinacion_cod_germinacion: number;
+  info_horno_fecha: Date;
+  info_tina_cod_tina: number;
+}

@@ -1,0 +1,110 @@
+
+
+<ion-header>
+  <ion-header>
+    <ion-toolbar style="--background: linear-gradient(90deg, #460909, #823a2e); box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">
+      <ion-title style="text-align: center; color: white;">Información de estado de TINA</ion-title>
+    </ion-toolbar>
+
+    <div
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ffffff; /* Fondo blanco */
+      padding: 20px;
+      margin-top: 0;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+      border-radius: 50%;">
+    <img
+      src="../../../assets/img/logo-web-3.jpg"
+      alt="maltexco logo"
+      style="
+        width: 130px; /* Tamaño del logo */
+        height: auto;
+        display: block;" />
+  </div>
+
+    <ion-toolbar>
+      <ion-searchbar
+        placeholder="Buscar por número de Batch"
+        [(ngModel)]="query"
+        (ionClear)="reiniciarFiltros()"
+        (ionInput)="buscarBatch($event)"
+      ></ion-searchbar>
+    </ion-toolbar>
+  </ion-header>
+</ion-header>
+
+<ion-content>
+
+
+  <!-- Spinner mientras se cargan los datos -->
+  <ion-spinner *ngIf="loading && !errorMessage" name="crescent" style="margin: 20px auto; display: block;"></ion-spinner>
+
+  <!-- Mensaje de error si no se encuentran los datos o ocurre un problema -->
+  <div *ngIf="errorMessage" style="text-align: center; margin-top: 20px;">
+    <p>{{ errorMessage }}</p>
+  </div>
+
+  <!-- Filtro por fecha -->
+  <ion-item *ngIf="!loading && !errorMessage">
+    <ion-label>Filtrar por Fecha</ion-label>
+    <ion-datetime
+      presentation="month-year"
+      placeholder="Selecciona una fecha"
+      [(ngModel)]="fechaFiltro"
+      (ionChange)="filtrarPorFecha()"
+    ></ion-datetime>
+  </ion-item>
+
+  <!-- Lista de fechas y batches -->
+  <ion-list *ngIf="!loading && !errorMessage && fechasFiltradas.length > 0; else noData">
+    <ion-card
+      *ngFor="let fecha of fechasFiltradas | orderBy: 'desc'; let i = index"
+      [ngClass]="{'card-open': isCardOpen(i), 'card-closed': !isCardOpen(i)}"
+      (click)="toggleCard(i)">
+      <ion-card-header>
+        <ion-card-title>Fecha: {{ fecha | date: 'dd-MM-yyyy' }}</ion-card-title>
+      </ion-card-header>
+
+      <!-- Lista de batches colapsable -->
+      <ion-list *ngIf="isCardOpen(i)">
+        <ion-item
+          *ngFor="let batch of getBatchesPorFecha(fecha)"
+          (click)="goToBatchDetails(batch)">
+          <ion-label>
+            <h2>Batch: {{ batch.batch }}</h2>
+            <p>Hora: {{ batch.hora | date: 'hh-mm-ss' }}</p>
+            <p>Estado tina: {{ getEstadoTinaDescripcion(batch.id_estado_tina) }}</p>
+            <p>Temperatura tina N°1: {{ batch.temptina1 }}</p>
+            <p>Temperatura tina N°2: {{ batch.temptina2 }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+  </ion-list>
+
+  <!-- Mensaje de "Cargando..." si no hay fechas -->
+  <ng-template #noData>
+    <p style="text-align: center; margin-top: 20px;">Cargando...</p>
+  </ng-template>
+</ion-content>
+
+<!-- Tabs flotantes -->
+<div>
+  <ion-tab-bar class="custom-tab-bar">
+    <ion-tab-button (click)="goBack()">
+      <ion-icon name="arrow-back-circle-outline"></ion-icon>
+      <ion-label>Volver</ion-label>
+    </ion-tab-button>
+    <ion-tab-button (click)="goHome()">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Inicio</ion-label>
+    </ion-tab-button>
+    <ion-tab-button (click)="goUser()">
+      <ion-icon name="person-circle-outline"></ion-icon>
+      <ion-label>Usuario</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</div>

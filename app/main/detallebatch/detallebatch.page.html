@@ -1,0 +1,215 @@
+<ion-header>
+  <ion-header>
+    <ion-toolbar class="headerArriba">
+    </ion-toolbar>
+  </ion-header>
+  <ion-header>
+    <div
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ffffff; /* Fondo blanco */
+      padding: 20px;
+      margin-top: 0;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+      border-radius: 50%;">
+    <img
+      src="../../../assets/img/logo-web-3.jpg"
+      alt="maltexco logo"
+      style="
+        width: 130px; /* Tamaño del logo */
+        height: auto;
+        display: block;" />
+  </div>
+  </ion-header>
+</ion-header>
+
+<ion-content *ngIf="batch">
+  <ion-card class="custom-card">
+    <ion-card-header>
+      <ion-card-title>Información de Producción - Batch {{ batch.batch }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <!-- Sección: Datos Generales -->
+      <ion-item-divider>
+        <ion-label>Datos Generales</ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-icon slot="start" name="calendar-outline"></ion-icon>
+        <ion-label>Fecha de Horneo: {{ batch.fecha_horneo | date: 'dd-MM-yyyy' }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="leaf-outline"></ion-icon>
+        <ion-label>Variedad: {{ batch.tipo_variedad }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="flame-outline"></ion-icon>
+        <ion-label>Tipo Horno: {{ getTipoHornoDescripcion(batch.id_tipo_horno) }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="water-outline"></ion-icon>
+        <ion-label>Tipo Malta: {{ getTipoMaltaDescripcion(batch.id_tipo_malta) }}</ion-label>
+      </ion-item>
+
+      <!-- Sección: Producción -->
+      <ion-item-divider>
+        <ion-label>Producción</ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+        <ion-label>Cebada Limpia: {{ batch.cebada_limpia }} kg</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+        <ion-label>Cebada Sucia: {{ batch.cebada_sucia }} kg</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+        <ion-label>Impureza: {{ batch.impureza }} %</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+        <ion-label>Polvo: {{ batch.polvo }} %</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+        <ion-label>Malta Sucia: {{ batch.malta_sucia }} kg</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+        <ion-label>Brote: {{ batch.brote }} %</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+        <ion-label>Malta Limpia: {{ batch.malta_limpia }} kg</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+        <ion-label>Malta Verde: {{ batch.malta_verde }} kg</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+        <ion-label>Materia Seca: {{ batch.materiaseca }} %</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+        <ion-label>Malta Equivalente: {{ batch.malta_equivalente }} kg</ion-label>
+      </ion-item>
+
+      <!-- Sección: Fechas -->
+      <ion-item-divider>
+        <ion-label>Fechas</ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-icon slot="start" name="calendar-outline"></ion-icon>
+        <ion-label>Fecha de Volteo: {{ batch.fecha_volteo | date: 'dd-MM-yyyy' }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="calendar-outline"></ion-icon>
+        <ion-label>Fecha de Pulido: {{ batch.fecha_pulido | date: 'dd-MM-yyyy' }}</ion-label>
+      </ion-item>
+
+      <!-- Sección: Consumos -->
+      <ion-item-divider>
+        <ion-label>Consumos</ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-icon slot="start" name="calculator-outline"></ion-icon>
+        <ion-label>Electricidad: {{ batch.electricidad }} kWh</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="flame-outline"></ion-icon>
+        <ion-label>Gas: {{ batch.gas }} m³</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="water-outline"></ion-icon>
+        <ion-label>Agua: {{ batch.agua }} m³</ion-label>
+      </ion-item>
+
+      <!-- Sección: Factores y Conversión -->
+      <ion-item-divider>
+        <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+        <ion-label>Factores y Conversión</ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+        <ion-label>Factor de Pérdida de Humedad: {{ batch.factor_perdida_humedad }} %</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+        <ion-label>Factor de Pérdida de Conversión: {{ batch.factor_perdida_conversion }} %</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+        <ion-label>KG Pérdida Humedad: {{ batch.kg_perdida_humedad }} kg</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+        <ion-label>KG Pérdida Conversión: {{ batch.kg_perdida_conversion }} kg</ion-label>
+      </ion-item>
+
+      <!-- Sección: Silos -->
+      <ion-item-divider>
+        <ion-label>Silos</ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-icon slot="start" name="calculator-outline"></ion-icon>
+        <ion-label>Silo Destino 1: {{ batch.silo_destino_1 }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="calculator-outline"></ion-icon>
+        <ion-label>KG Destino 1: {{ batch.kg_destino_1 }} kg</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="calculator-outline"></ion-icon>
+        <ion-label>Silo Destino 2: {{ batch.silo_destino_2 || 'No especificado' }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="calculator-outline"></ion-icon>
+        <ion-label>KG Destino 2: {{ batch.kg_destino_2 || 'No especificado' }} kg</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="calculator-outline"></ion-icon>
+        <ion-label>Silo Origen 1: {{ batch.silo_origen_1 }} kg</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="calculator-outline"></ion-icon>
+        <ion-label>Silo Origen 2: {{ batch.silo_origen_2 }} kg</ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+ <!-- ion-infinite-scroll
+ <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+  <ion-infinite-scroll-content loadingSpinner="crescent" loadingText="Cargando más datos..."></ion-infinite-scroll-content>
+</ion-infinite-scroll> -->
+
+
+</ion-content>
+
+<ion-content *ngIf="!batch">
+  <p style="text-align: center; margin-top: 20px;">Cargando...</p>
+</ion-content>
+
+<!-- Tabs flotantes -->
+<div>
+  <ion-tab-bar class="custom-tab-bar">
+    <ion-tab-button (click)="goBack()">
+      <ion-icon name="arrow-back-circle-outline"></ion-icon>
+      <ion-label>Volver</ion-label>
+    </ion-tab-button>
+    <ion-tab-button (click)="goHome()">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Inicio</ion-label>
+    </ion-tab-button>
+    <ion-tab-button (click)="goUser()">
+      <ion-icon name="person-circle-outline"></ion-icon>
+      <ion-label>Usuario</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</div>
+
+
+
+
+
