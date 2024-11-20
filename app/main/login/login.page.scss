@@ -1,0 +1,277 @@
+ion-note {
+  color: #e63946; /* Rojo vibrante */
+  font-size: 14px;
+  margin-top: 5px;
+  display: block;
+}
+
+h1 {
+  font-size: 1.2rem; /* Tamaño de texto ajustado */
+  color: #333333; /* Gris oscuro */
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.5rem; /* Ajuste a un tamaño profesional */
+  color: #4a4a4a; /* Gris elegante */
+}
+
+/* Header */
+.headerArriba {
+  --background: linear-gradient(90deg, #7e1e1e, #3d0c0c); /* Degradado más elegante */
+  --color: #ffffff; /* Texto blanco puro */
+  height: 100px;
+  font-size: 1.8em;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.3); /* Sombra más espectacular */
+}
+
+/* Botón de inicio de sesión */
+.boton-iniciar-sesion {
+  --background: linear-gradient(90deg, #4e9afe, #0078d7); /* Degradado azul vibrante */
+  --color: #ffffff; /* Texto blanco */
+  border-radius: 20px; /* Bordes más suaves */
+  padding: 20px 02px; /* Espaciado interno ajustado */
+  font-size: 0.7rem; /* Tamaño del texto adaptado */
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0px 6px 15px rgba(0, 120, 215, 0.3); /* Sombra elegante */
+  width: auto; /* Ajuste dinámico según el texto */
+  max-width: 300px; /* Máximo ancho para dispositivos grandes */
+  margin: 0 auto; /* Centrado horizontal */
+  white-space: nowrap; /* Evita que el texto haga saltos de línea */
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.boton-iniciar-sesion:hover {
+  transform: scale(1.05); /* Efecto de crecimiento */
+  box-shadow: 0px 10px 20px rgba(0, 120, 215, 0.5); /* Más sombra */
+}
+
+/* Contenedor principal */
+.center-container {
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  height: 100%; /* Asegúrate de que el contenedor tenga altura suficiente */
+}
+
+/* Campos de entrada */
+.rounded-input ion-input {
+  --background: #f5f5f5; /* Fondo gris claro */
+  --border-radius: 15px; /* Bordes redondeados */
+  --padding-start: 15px; /* Espaciado interno */
+  --padding-end: 15px;
+  border: 1px solid #dcdcdc; /* Borde gris claro */
+  margin: 12px 0; /* Espaciado externo */
+  font-size: 1.1rem; /* Texto más cómodo */
+  color: #4a4a4a; /* Texto gris oscuro */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra interna */
+}
+
+.rounded-input ion-input:focus {
+  border-color: #0078d7; /* Azul vibrante */
+  box-shadow: 0px 4px 8px rgba(0, 120, 215, 0.3); /* Resaltado */
+}
+
+.rounded-input ion-label {
+  color: #444444; /* Gris oscuro */
+  font-weight: bold;
+  font-size: 1.2rem; /* Texto más grande */
+}
+
+/* Formulario */
+.main-content {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background: linear-gradient(135deg, #ffffff, #f9f9f9); /* Degradado limpio */
+  border-radius: 20px; /* Bordes suaves */
+  box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.2); /* Sombra espectacular */
+  margin-top: 150px;
+  max-width: 480px; /* Ancho máximo */
+  margin: 0 auto; /* Centrado */
+  animation: fadeIn 0.8s ease; /* Animación de entrada */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Logo */
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  margin-bottom: 20px; /* Espacio debajo del logo */
+}
+
+.image-inside {
+  width: 140px; /* Tamaño ajustado */
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.image-inside:hover {
+  transform: scale(1.1); /* Efecto de aumento */
+}
+
+/* Fondo general */
+body {
+  background: linear-gradient(180deg, #f5f5f5, #ececec); /* Fondo degradado claro */
+  font-family: 'Poppins', sans-serif; /* Fuente elegante */
+  color: #212529; /* Texto oscuro */
+  line-height: 1.6;
+}
+
+/* Inputs personalizados */
+.input-item {
+  width: 100%;
+  border-radius: 30px;
+  border: 1px solid #e2e2e2;
+  height: 55px;
+  text-align: center;
+  font-size: 1rem;
+  background: #ffffff; /* Fondo blanco puro */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-item:focus {
+  border-color: #0078d7; /* Azul vibrante */
+  box-shadow: 0px 4px 10px rgba(0, 120, 215, 0.3); /* Resaltado */
+}
+/* Ventana emergente */
+.forgot-password-modal {
+  background: linear-gradient(135deg, #ffffff, #f1f1f1); /* Fondo degradado limpio */
+  border-radius: 15px; /* Bordes suaves */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Sombra elegante */
+  max-width: 400px; /* Ancho máximo */
+  margin: 0 auto; /* Centrado */
+  padding: 20px; /* Espaciado interno */
+  animation: fadeIn 0.5s ease; /* Animación de entrada */
+  color: #333333; /* Texto gris oscuro */
+}
+
+/* Fondo oscuro */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  z-index: 999; /* Capa superior */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Fondo oscuro */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0.5) 100%);
+  z-index: 999; /* Capa superior */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(8px); /* Efecto de desenfoque */
+}
+
+/* Ventana emergente */
+.forgot-password-modal {
+  background: linear-gradient(145deg, #ffffff, #f3f3f3); /* Fondo degradado limpio */
+  border-radius: 20px; /* Bordes suaves */
+  box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.4); /* Sombra más profunda */
+  max-width: 400px; /* Ancho máximo */
+  margin: 0 auto; /* Centrado */
+  padding: 25px; /* Espaciado interno */
+  animation: slideIn 0.4s ease; /* Animación de entrada */
+  color: #333333; /* Texto gris oscuro */
+  text-align: center;
+}
+
+/* Animación de entrada */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Título */
+.forgot-password-modal h2 {
+  font-size: 1.8rem; /* Tamaño de texto más grande */
+  font-weight: bold; /* Negrita */
+  color: #0078d7; /* Azul vibrante */
+  margin-bottom: 15px; /* Espaciado inferior */
+}
+
+/* Contenido */
+.forgot-password-modal p {
+  font-size: 1rem; /* Tamaño de texto cómodo */
+  color: #4a4a4a; /* Texto gris oscuro */
+  line-height: 1.6; /* Altura de línea */
+  text-align: justify; /* Justificar texto */
+  margin-bottom: 20px; /* Espaciado inferior */
+}
+
+/* Botón de cerrar */
+.forgot-password-modal-close {
+  background: linear-gradient(90deg, #e63946, #c62828); /* Degradado rojo vibrante */
+  color: #ffffff; /* Texto blanco */
+  border: none; /* Sin borde */
+  padding: 12px 20px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  font-size: 1.1rem; /* Tamaño del texto */
+  font-weight: bold; /* Texto en negrita */
+  cursor: pointer; /* Indicador de clic */
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.forgot-password-modal-close:hover {
+  background: linear-gradient(90deg, #c62828, #b71c1c); /* Más oscuro al pasar el mouse */
+  transform: scale(1.05); /* Efecto de crecimiento */
+  box-shadow: 0px 8px 15px rgba(198, 40, 40, 0.4); /* Sombra más pronunciada */
+}
+
+/* Responsividad */
+@media screen and (max-width: 768px) {
+  .forgot-password-modal {
+    max-width: 90%; /* Más ancho en pantallas pequeñas */
+    padding: 20px; /* Reducir padding */
+  }
+
+  .forgot-password-modal h2 {
+    font-size: 1.5rem; /* Reducir el tamaño del título */
+  }
+
+  .forgot-password-modal p {
+    font-size: 0.95rem; /* Ajustar texto */
+  }
+
+  .forgot-password-modal-close {
+    font-size: 1rem; /* Ajustar texto del botón */
+  }
+}

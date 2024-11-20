@@ -1,0 +1,105 @@
+.custom-tab-bar {
+  background-color: #ffffff;
+  border-top: 2px solid #cfe7ff; /* Azul claro */
+  height: 60px;
+  box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.has-tabs {
+  padding-bottom: 60px; /* Espacio para los tabs */
+}
+
+ion-tab-button {
+  font-weight: bold;
+  color: #7a7a7a; /* Color predeterminado */
+  transition: color 0.3s ease;
+}
+
+ion-tab-button[aria-selected="true"] {
+  color: #0078d7; /* Azul vibrante */
+}
+
+ion-icon {
+  font-size: 24px;
+  color: inherit;
+}
+
+ion-label {
+  font-size: 14px; /* Ajuste del tamaño del texto */
+  margin-top: 4px;
+}
+
+ion-tab-bar {
+  padding: 4px 0; /* Ajusta el espaciado interno */
+}
+
+/* Header */
+.headerArriba {
+  --background: linear-gradient(90deg, #460909, #823a2e); /* Mantener el degradado rojo elegante */
+  --color: white; /* Texto blanco */
+  height: 80px;
+  font-size: 1.8em;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más profunda */
+}
+
+/* Imagen del logo */
+.image-container {
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  margin-top: 5px;
+}
+
+/* Contenedor del botón de cerrar sesión */
+.cerrar-sesion-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  max-width: 320px; /* Limitar el ancho máximo del contenedor */
+  padding: 15px; /* Espaciado interno */
+  background: linear-gradient(135deg, #e6f2ff, #d0eaff); /* Fondo degradado azul claro */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15); /* Sombra más definida */
+  border: 1px solid #b3d8ff; /* Borde azul claro */
+}
+
+/* Botón de cerrar sesión */
+.cerrar-sesion {
+  background: linear-gradient(90deg, #73bdf4, #0078d7); /* Fondo degradado azul vibrante */
+  color: #ffffff; /* Texto blanco */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 12px 30px; /* Espaciado interno más amplio */
+  font-size: 1.1rem; /* Tamaño de texto cómodo */
+  font-weight: bold; /* Negrita */
+  text-align: center; /* Centrar texto */
+  cursor: pointer; /* Indicador de clic */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25); /* Sombra más profunda */
+  width: 100%; /* Ajustar al ancho del contenedor */
+  max-width: 240px; /* Limitar ancho máximo del botón */
+  border: none; /* Sin borde adicional */
+}
+
+/* Efecto al pasar el mouse */
+.cerrar-sesion:hover {
+  transform: scale(1.05); /* Efecto de agrandamiento */
+  box-shadow: 0px 8px 18px rgba(0, 120, 215, 0.5); /* Sombra más intensa */
+  background: linear-gradient(90deg, #0059b3, #004080); /* Fondo degradado más oscuro */
+}
+
+/* Ajustes para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  .cerrar-sesion-container {
+    max-width: 95%; /* Más ancho en dispositivos pequeños */
+    padding: 10px; /* Reducir padding */
+  }
+
+  .cerrar-sesion {
+    font-size: 1rem; /* Reducir tamaño de texto */
+    padding: 10px 20px; /* Ajustar espaciado */
+  }
+}
