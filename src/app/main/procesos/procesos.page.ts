@@ -17,5 +17,14 @@ export class ProcesosPage implements OnInit {
   goToInfoTina() {
     this.router.navigateByUrl('/info-tina');
   }
+  // Función para navegar a la página Estado
+  goToInfoHorno() {
+    this.router.navigateByUrl('/info-horno');
+  }
+  // Función para navegar a la página Estado
+  goToInfoGerm() {
+    this.router.navigateByUrl('/info-germ');
+  }
+
 
 }
