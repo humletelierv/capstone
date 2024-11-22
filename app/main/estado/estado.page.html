@@ -1,4 +1,5 @@
 <ion-header>
+<<<<<<< HEAD
   <ion-toolbar style="--background: linear-gradient(90deg, #460909, #823a2e); box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">
     <ion-title style="text-align: center; color: white;">Estado de Batch</ion-title>
   </ion-toolbar>
@@ -37,6 +38,33 @@ placeholder="Buscar por número de Batch"
 
   <!-- Mensaje de error si no se encuentran los datos o ocurre un problema -->
   <div *ngIf="errorMessage" style="text-align: center; margin-top: 20px;">
+=======
+  <!-- Barra superior con degradado -->
+  <ion-toolbar class="headerArriba">
+    <ion-title>Estado de Batch</ion-title>
+  </ion-toolbar>
+
+  <!-- Contenedor del logo -->
+  <div class="image-container logo-container-adjustable">
+    <ion-img src="../../../assets/img/logo-web-3.jpg" alt="maltexco logo" class="image-inside"></ion-img>
+  </div>
+
+  <!-- Barra de búsqueda -->
+  <ion-toolbar>
+    <ion-searchbar
+      placeholder="Buscar por número de Batch"
+      [(ngModel)]="query"
+      (ionClear)="reiniciarFiltros()"
+      (ionInput)="buscarBatch($event)">
+    </ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- Mensaje de error si ocurre un problema -->
+  <div *ngIf="errorMessage" class="error-message">
+>>>>>>> master
     <p>{{ errorMessage }}</p>
   </div>
 
@@ -47,8 +75,13 @@ placeholder="Buscar por número de Batch"
       presentation="month-year"
       placeholder="Selecciona una fecha"
       [(ngModel)]="fechaFiltro"
+<<<<<<< HEAD
       (ionChange)="filtrarPorFecha()"
     ></ion-datetime>
+=======
+      (ionChange)="filtrarPorFecha()">
+    </ion-datetime>
+>>>>>>> master
   </ion-item>
 
   <!-- Lista de fechas y batches -->
@@ -78,7 +111,11 @@ placeholder="Buscar por número de Batch"
 
   <!-- Mensaje de "Cargando..." si no hay fechas -->
   <ng-template #noData>
+<<<<<<< HEAD
     <p style="text-align: center; margin-top: 20px;">Cargando...</p>
+=======
+    <p class="no-data-message">Cargando...</p>
+>>>>>>> master
   </ng-template>
 </ion-content>
 

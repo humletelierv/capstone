@@ -20,16 +20,29 @@ body {
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más profunda */
 }
 
+<<<<<<< HEAD
 /* Contenedor del logo */
+=======
+/* Contenedor del logo ajustable */
+>>>>>>> master
 .image-container {
   display: flex;
   justify-content: center;
   align-items: center;
+<<<<<<< HEAD
   margin-top: 30px;
+=======
+>>>>>>> master
   background: #00aec5; /* Fondo blanco */
   border-radius: 50%;
   padding: 25px;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); /* Sombra suave */
+<<<<<<< HEAD
+=======
+  margin: 10px auto; /* Espaciado superior/inferior */
+  position: relative; /* Hacerlo posicionable */
+  top: -20px; /* Ajuste vertical del logo */
+>>>>>>> master
 }
 
 .image-inside {
@@ -37,6 +50,30 @@ body {
   height: auto;
 }
 
+<<<<<<< HEAD
+=======
+/* Responsividad del logo */
+@media screen and (max-width: 768px) {
+  .image-container {
+    top: -10px; /* Menor desplazamiento en pantallas pequeñas */
+  }
+
+  .image-inside {
+    width: 100px; /* Logo más pequeño en móviles */
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .image-container {
+    top: -30px; /* Mayor desplazamiento en pantallas grandes */
+  }
+
+  .image-inside {
+    width: 140px; /* Logo más grande en pantallas grandes */
+  }
+}
+
+>>>>>>> master
 /* Tarjeta */
 ion-card {
   background: #ffffff;
@@ -100,6 +137,7 @@ ion-item:hover {
   box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
 }
 
+<<<<<<< HEAD
 /* Detalles resaltados */
 ion-label h2,
 ion-label p {
@@ -139,6 +177,8 @@ ion-card-title:hover {
   transform: scale(1.02);
 }
 
+=======
+>>>>>>> master
 /* Manteniendo el diseño de los botones */
 ion-tab-button {
   font-weight: bold;
@@ -149,6 +189,32 @@ ion-tab-button[aria-selected="true"] {
   color: #3880ff; /* Color destacado */
 }
 
+<<<<<<< HEAD
+=======
+
+ion-label h2,
+ion-label p {
+  background: #ffcdd2; /* Fondo rosado claro */
+  border-left: 5px solid #d32f2f; /* Barra roja */
+  padding: 12px;
+  border-radius: 10px;
+  margin: 8px 0;
+  box-shadow: inset 0px 3px 6px rgba(0, 0, 0, 0.1); /* Sombra interna */
+  color: #2c2c2c; /* Texto más oscuro */
+}
+
+ion-label:hover h2,
+ion-label:hover p {
+  background: #e57373; /* Fondo rojizo */
+  color: #ffffff; /* Texto blanco al pasar el mouse */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Sombra externa */
+  transform: scale(1.02);
+}
+
+
+
+
+>>>>>>> master
 ion-icon {
   font-size: 24px;
   color: #3880ff;
@@ -165,3 +231,67 @@ ion-tab-bar {
   height: 60px;
   box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
 }
+<<<<<<< HEAD
+=======
+/* Texto "Cargando" con diseño profesional y animación */
+.no-data-message {
+  position: absolute;
+  top: 50%; /* Centrado verticalmente */
+  left: 50%; /* Centrado horizontalmente */
+  transform: translate(-50%, -50%); /* Ajuste para centrar exactamente */
+  color: #ffffff; /* Texto blanco */
+  font-size: 1.3em; /* Tamaño de fuente más grande */
+  font-weight: bold; /* Negrita */
+  text-align: center; /* Centrar el texto */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); /* Sombra sutil en el texto */
+  background: linear-gradient(90deg, #823a2e, #460909); /* Fondo degradado */
+  padding: 15px 30px; /* Espaciado interno */
+  border-radius: 25px; /* Bordes redondeados */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Sombra externa */
+  animation: loading-text 2s infinite, glowing-border 1.5s infinite; /* Animaciones */
+}
+
+/* Animación: Parpadeo */
+@keyframes loading-text {
+  0% {
+    opacity: 1; /* Totalmente visible */
+  }
+  50% {
+    opacity: 0.7; /* Semitransparente */
+  }
+  100% {
+    opacity: 1; /* Totalmente visible */
+  }
+}
+
+/* Animación: Borde que brilla */
+@keyframes glowing-border {
+  0% {
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.7);
+  }
+  100% {
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
+  }
+}
+ion-card-title {
+  font-size: 0.7em; /* Reducido ligeramente (ajustar según necesidad) */
+  font-weight: bold;
+  color: #ffffff;
+  padding: 10px;
+  background: #1976d2; /* Fondo azul */
+  border-radius: 8px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+  text-align: center;
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+ion-card-title:hover {
+  background: #1565c0; /* Fondo más oscuro */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Más sombra */
+  transform: scale(1.02);
+}
+>>>>>>> master

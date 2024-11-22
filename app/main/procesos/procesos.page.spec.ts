@@ -14,4 +14,8 @@ describe('ProcesosPage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 });

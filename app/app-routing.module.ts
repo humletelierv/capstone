@@ -50,6 +50,26 @@ const routes: Routes = [
     canActivate: [AuthGuard], // Protege la ruta con el AuthGuard
 
   },
+<<<<<<< HEAD
+=======
+  {
+    path: 'info-horno',
+    loadChildren: () => import('./main/info-horno/info-horno.module').then( m => m.InfoHornoPageModule),
+    canActivate: [AuthGuard], // Protege la ruta con el AuthGuard
+  },
+  {
+    path: 'info-germ',
+    loadChildren: () => import('./main/info-germ/info-germ.module').then( m => m.InfoGermPageModule),
+    canActivate: [AuthGuard], // Protege la ruta con el AuthGuard
+  },
+  {
+    path: 'detallehorno/:NumeroBatch',
+    loadChildren: () => import('./main/detallehorno/detallehorno.module').then( m => m.DetallehornoPageModule),
+    canActivate: [AuthGuard], // Protege la ruta con el AuthGuard
+  },
+
+
+>>>>>>> master
 
 ];
 

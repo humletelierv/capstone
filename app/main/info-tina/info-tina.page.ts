@@ -48,6 +48,7 @@ export class InfoTinaPage implements OnInit {
     gesture.enable(true);
   }
 
+<<<<<<< HEAD
   // Métodos para los botones
   goBack() {
     this.router.navigate(['/home']); // Ruta para "Volver"
@@ -61,6 +62,8 @@ export class InfoTinaPage implements OnInit {
     this.router.navigate(['/configuracion-usuario']); // Ruta para "Usuario"
   }
 
+=======
+>>>>>>> master
   // Método para cargar los datos
   cargarBatches() {
     this.authService.getInfoTina().subscribe(
@@ -87,6 +90,11 @@ export class InfoTinaPage implements OnInit {
     );
   }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> master
   buscarBatch(event: any) {
     const query = event.target.value?.toString().toLowerCase() || ''; // Convertir la entrada a cadena y minúsculas
     this.batchesFiltrados = this.batches.filter((batch) =>
@@ -120,10 +128,18 @@ export class InfoTinaPage implements OnInit {
   }
 
   getBatchesPorFecha(fecha: string): Tina[] {
+<<<<<<< HEAD
+=======
+    // Filtra primero por la fecha
+>>>>>>> master
     let batchesFiltradosPorFecha = this.batches.filter(
       (batch) => new Date(batch.fecha).toISOString().split('T')[0] === fecha
     );
 
+<<<<<<< HEAD
+=======
+    // Si hay un término de búsqueda (query), aplica el filtro adicional por número de batch
+>>>>>>> master
     if (this.query) {
       const query = this.query.toString().toLowerCase();
       batchesFiltradosPorFecha = batchesFiltradosPorFecha.filter((batch) =>
@@ -131,9 +147,17 @@ export class InfoTinaPage implements OnInit {
       );
     }
 
+<<<<<<< HEAD
     return batchesFiltradosPorFecha;
   }
 
+=======
+    // Retorna el resultado, incluso si es un arreglo vacío
+    return batchesFiltradosPorFecha;
+  }
+
+
+>>>>>>> master
   toggleCard(index: number) {
     this.cardOpenStates = this.cardOpenStates.map((_, i) =>
       i === index ? !this.cardOpenStates[i] : false
@@ -144,6 +168,19 @@ export class InfoTinaPage implements OnInit {
     return this.cardOpenStates[index];
   }
 
+<<<<<<< HEAD
+=======
+  goBack() {
+    this.router.navigate(['/procesos']); // Navega a la página 'home' o cualquier página específica
+  }
+  goHome() {
+    this.router.navigate(['/home']); // Navega a la página 'home' o cualquier página específica
+  }
+  goUser() {
+    this.router.navigate(['/configuracion-usuario']); // Navega a la página 'home' o cualquier página específica
+  }
+
+>>>>>>> master
   goToBatchDetails(batch: Tina) {
     this.router.navigate(['/detallebatch', batch.batch]);
   }
@@ -155,4 +192,9 @@ export class InfoTinaPage implements OnInit {
     };
     return estadosTina[id_estado_tina] || 'Desconocido';
   }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> master
 }
