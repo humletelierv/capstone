@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-header>
+    <ion-toolbar class="headerArriba">
+    </ion-toolbar>
+  </ion-header>
+  <ion-header>
+    <div class="image-container">
+      <ion-img src="../../../assets/img/logo-web-3.jpg" alt="maltexco logo" class="image-inside"></ion-img>
+    </div>
+  </ion-header>
+</ion-header>
+<ion-content>
+  <ion-card-header>
+    <ion-card-title style="text-align: center;">Configuración de Usuario</ion-card-title>
+  </ion-card-header>
+  <ion-list>
+    <!-- Mostrar este ítem solo si el usuario es admin -->
+    <ion-item *ngIf="isAdmin" (click)="goToGestionUsuarios()">
+      <ion-label>Gestionar Usuarios</ion-label>
+    </ion-item>
+
+     <!-- Botón para cerrar sesión -->
+     <ion-item (click)="logout()">
+      <ion-label color="danger">Cerrar sesión</ion-label>
+    </ion-item>
+
+  </ion-list>
+</ion-content>
+
+<div>
+  <ion-tab-bar class="custom-tab-bar">
+    <ion-tab-button (click)="goBack()">
+      <ion-icon name="arrow-back-circle-outline"></ion-icon>
+      <ion-label>Volver</ion-label>
+    </ion-tab-button>
+    <ion-tab-button (click)="goHome()">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Inicio</ion-label>
+    </ion-tab-button>
+    <ion-tab-button (click)="goUser()">
+      <ion-icon name="person-circle-outline"></ion-icon>
+      <ion-label>Usuario</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</div>

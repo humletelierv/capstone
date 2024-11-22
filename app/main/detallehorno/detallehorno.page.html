@@ -1,0 +1,177 @@
+<ion-header>
+  <ion-header>
+    <ion-toolbar class="headerArriba">
+    </ion-toolbar>
+  </ion-header>
+  <ion-header>
+    <div class="image-container">
+      <ion-img src="../../../assets/img/logo-web-3.jpg" alt="maltexco logo" class="image-inside"></ion-img>
+    </div>
+  </ion-header>
+</ion-header>
+
+<ion-content *ngIf="batch">
+  <ion-card class="custom-card">
+    <ion-card-header>
+      <ion-card-title>Información de Horno - Batch {{ batch.batch }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <!-- Sección: Datos Generales -->
+      <ion-item-divider>
+        <ion-label>Datos Generales</ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-icon slot="start" name="calendar-outline"></ion-icon>
+        <ion-label>Fecha: {{ batch.fecha | date: 'dd-MM-yyyy' }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="leaf-outline"></ion-icon>
+        <ion-label>Variedad: {{ batch.variedad }}</ion-label>
+      </ion-item>
+
+      <!-- Sección: Datos generales -->
+      <ion-item-divider>
+        <ion-label>Producción</ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+        <ion-label>Temperatura sobre grano: {{ batch.temp_sobre_grano }}°</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+        <ion-label>Temperatura bajo tela: {{ batch.temp_bajo_tela }}°</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+        <ion-label>Temperatura ambiente: {{ batch.temp_ambiente }}°</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+        <ion-label>Punto de apertura Damper: {{ batch.p_apertura_damper }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+        <ion-label>
+          Presion diferencial: {{ batch.presion_diferencial }}ΔP</ion-label>
+      </ion-item>
+
+
+      <!-- Sección: Consumos gas -->
+      <ion-item-divider>
+        <ion-label>Consumo gas</ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-icon slot="start" name="calculator-outline"></ion-icon>
+        <ion-label>Gas etapa 1: {{ batch.gas_et_1 }} m³</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="calculator-outline"></ion-icon>
+        <ion-label>Gas etapa 2: {{ batch.gas_et_2 }} m³</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="calculator-outline"></ion-icon>
+        <ion-label>Gas etapa 3: {{ batch.gas_et_3 }} m³</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="calculator-outline"></ion-icon>
+        <ion-label>Gas etapa 4: {{ batch.gas_et_4 }} m³</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="calculator-outline"></ion-icon>
+        <ion-label>Gas etapa 5: {{ batch.gas_et_5 }} m³</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="calculator-outline"></ion-icon>
+        <ion-label>Gas etapa 6: {{ batch.gas_et_6 }} m³</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="calculator-outline"></ion-icon>
+        <ion-label>Gas etapa 7: {{ batch.gas_total }} m³</ion-label>
+      </ion-item>
+
+      <!-- Sección: Tiempo en barra -->
+      <ion-item-divider>
+        <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+        <ion-label>Tiempo en barra</ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+        <ion-label>Tiempo en Barra etapa 1: {{ batch.tiempo_barra_e1 }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+        <ion-label>Tiempo en Barra etapa 2: {{ batch.tiempo_barra_e2 }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+        <ion-label>Tiempo en Barra etapa 3: {{ batch.tiempo_barra_e3 }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+        <ion-label>Tiempo en Barra etapa 4: {{ batch.tiempo_barra_e4 }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+        <ion-label>Tiempo en Barra etapa 5: {{ batch.tiempo_barra_e5 }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+        <ion-label>Tiempo en Barra etapa 6: {{ batch.tiempo_barra_e6 }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+        <ion-label>Tiempo en Barra etapa 7: {{ batch.tiempo_total }}</ion-label>
+      </ion-item>
+
+      <!-- Sección: Temperaturas -->
+      <ion-item-divider>
+        <ion-label>Temperaturas por etapas</ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-icon slot="start" name="calculator-outline"></ion-icon>
+        <ion-label>Temperatura Etapa 1: {{ batch.sp_temp_1 }}°</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="calculator-outline"></ion-icon>
+        <ion-label>Temperatura Etapa 2: {{ batch.sp_temp_2 }}°</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="calculator-outline"></ion-icon>
+        <ion-label>Temperatura Etapa 3: {{ batch.sp_temp_3 }}°</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="calculator-outline"></ion-icon>
+        <ion-label>Temperatura Etapa 4: {{ batch.sp_temp_4 }}°</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="calculator-outline"></ion-icon>
+        <ion-label>Temperatura Etapa 5: {{ batch.sp_temp_5 }}°</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="calculator-outline"></ion-icon>
+        <ion-label>Temperatura Etapa 6: {{ batch.sp_temp_6 }}°</ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+<ion-content *ngIf="!batch">
+  <p style="text-align: center; margin-top: 20px;">Cargando...</p>
+</ion-content>
+
+<!-- Tabs flotantes -->
+<div>
+  <ion-tab-bar class="custom-tab-bar">
+    <ion-tab-button (click)="goBack()">
+      <ion-icon name="arrow-back-circle-outline"></ion-icon>
+      <ion-label>Volver</ion-label>
+    </ion-tab-button>
+    <ion-tab-button (click)="goHome()">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Inicio</ion-label>
+    </ion-tab-button>
+    <ion-tab-button (click)="goUser()">
+      <ion-icon name="person-circle-outline"></ion-icon>
+      <ion-label>Usuario</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</div>

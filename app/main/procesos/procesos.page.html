@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar class="headerArriba">
+    <!-- Título -->
+    <ion-title>Procesos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Contenedor del logo -->
+  <div class="image-container">
+    <ion-img src="../../../assets/img/logo-web-3.jpg" alt="maltexco logo" class="image-inside"></ion-img>
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="main-content">
+    <!-- Título de bienvenida -->
+    <h1 class="welcome-title" style="font-size: 1.0em;">Lista de procesos</h1>
+
+    <!-- Botones de navegación -->
+    <div class="buttons-container">
+      <ion-button expand="full" size="large" (click)="goToInfoTina()">Tina</ion-button>
+      <ion-button expand="full" size="large" (click)="goToInfoHorno()">Horno</ion-button>
+      <ion-button expand="full" size="large" (click)="goToInfoGerm()">Germinación</ion-button>
+    </div>
+  </div>
+</ion-content>
+
+<!-- Tabs flotantes -->
+<div>
+  <ion-tab-bar class="custom-tab-bar">
+    <ion-tab-button (click)="goBack()">
+      <ion-icon name="arrow-back-circle-outline" style="color: red;"></ion-icon>
+      <ion-label>Volver</ion-label>
+    </ion-tab-button>
+    <ion-tab-button (click)="goHome()">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Inicio</ion-label>
+    </ion-tab-button>
+    <ion-tab-button (click)="goUser()">
+      <ion-icon name="person-circle-outline"></ion-icon>
+      <ion-label>Usuario</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</div>

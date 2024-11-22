@@ -1,0 +1,46 @@
+.custom-tab-bar {
+  background-color: #ffffff;
+  border-top: 1px solid #e0e0e0;
+  height: 60px;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.has-tabs {
+  padding-bottom: 60px; /* Espacio para los tabs */
+}
+ion-tab-button {
+  font-weight: bold;
+  color: #7a7a7a; /* Color predeterminado */
+}
+
+ion-tab-button[aria-selected="true"] {
+  color: #3880ff; /* Color destacado para el botón seleccionado */
+}
+
+ion-icon {
+  font-size: 24px; /* Tamaño de los íconos */
+  color: #3880ff;
+}
+
+ion-label {
+  font-size: 12px; /* Ajusta el tamaño del texto */
+  margin-top: 4px; /* Espaciado entre el ícono y el texto */
+}
+
+ion-tab-bar {
+  padding: 4px 0; /* Ajusta el espaciado interno */
+}
+.headerArriba{
+  --background: #ae4a4a; /* Cambia a tu color deseado */
+  --color: white; /* Color del texto en el header */
+  height: 100px; /* Ajusta a la altura que desees */
+  margin-top: 5px;
+
+}
+.image-container {
+  display: flex; /* Configura un contenedor flexible */
+  justify-content: center; /* Centra horizontalmente */
+  //align-items: center; /* Centra verticalmente */
+  height: 100px; /* Altura opcional del contenedor */
+  margin-top: 5px;
+}
