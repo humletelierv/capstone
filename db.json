@@ -1,0 +1,54 @@
+{
+
+"usuarios":[
+  {
+  "username":"beto",
+  "password":"123",
+  "rut":"201594235",
+  "role":"admin",
+  "actividad":"offline"
+
+},
+{
+  "username":"juan",
+  "password":"123",
+  "rut":"20159424",
+  "role":"usuario",
+  "actividad":"offline"
+},
+{
+  "username":"pedro",
+  "password":"123",
+  "rut":"20159424",
+  "role":"admin",
+  "actividad":"offline"
+}
+],
+"Batch": [
+    {
+      "NumeroBatch": "Batch 1",
+      "Temperatura": "25",
+      "Presion": "101325"
+    },
+    {
+      "NumeroBatch": "Batch 2",
+      "Temperatura": "30",
+      "Presion": "100500"
+    },
+    {
+      "NumeroBatch": "Batch 3",
+      "Temperatura": "28",
+      "Presion": "102000"
+    },
+    {
+      "NumeroBatch": "Batch 4",
+      "Temperatura": "32",
+      "Presion": "100800"
+    },
+    {
+      "NumeroBatch": "Batch 5",
+      "Temperatura": "26",
+      "Presion": "101500"
+    }
+  ]
+}

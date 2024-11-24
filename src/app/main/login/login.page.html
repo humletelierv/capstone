@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar class="headerArriba"></ion-toolbar>
+</ion-header>
+
+<ion-header>
+  <div class="image-container">
+    <ion-img src="../../../assets/img/logo-web-3.jpg" alt="maltexco logo" class="image-inside"></ion-img>
+  </div>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="main-content">
+    <ion-card class="login-card" style="width: 500px; max-width: 90%; padding: 20px; box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1); border-radius: 10px;">
+      <form [formGroup]="formInic">
+
+        <!-- Campo de usuario -->
+        <ion-item lines="none" style="margin-bottom: 15px; display: flex; flex-direction: column; align-items: flex-start; border: none;">
+          <ion-label position="stacked" style="margin: 5px 0; font-size: 18px; font-weight: bold; color: #333;">Usuario</ion-label>
+          <ion-input type="text" formControlName="username" placeholder="Ingrese el usuario" class="input-item" style="font-size: 16px; padding: 10px; border: 1px solid #ccc; border-radius: 5px; width: 100%;"></ion-input>
+        </ion-item>
+
+        <!-- Campo de contraseña -->
+        <ion-item lines="none" style="margin-bottom: 15px; display: flex; flex-direction: column; align-items: flex-start; border: none;">
+          <ion-label position="stacked" style="margin: 5px 0; font-size: 18px; font-weight: bold; color: #333;">Contraseña</ion-label>
+          <ion-input type="password" formControlName="password" placeholder="Ingrese la contraseña" class="input-item" style="font-size: 16px; padding: 10px; border: 1px solid #ccc; border-radius: 5px; width: 100%;"></ion-input>
+        </ion-item>
+
+        <!-- Botón para iniciar sesión -->
+        <ion-button expand="block" type="submit" (click)="onLogin()" class="boton-iniciar-sesion" style="margin: 20px 0; font-size: 16px; font-weight: bold; border-radius: 5px; padding: 12px; width: 100%;  color: white;">
+          Iniciar sesión
+        </ion-button>
+
+        <!-- Botón "¿Olvidaste tu contraseña?" -->
+        <ion-button fill="clear" color="dark" (click)="openForgotPasswordModal()" style="text-align: center; font-size: 14px; color: #555;">
+          ¿Olvidaste tu contraseña?
+        </ion-button>
+      </form>
+    </ion-card>
+  </div>
+</ion-content>
+
+<!-- Modal para ¿Olvidaste tu contraseña? -->
+<div *ngIf="showForgotPasswordModal" class="modal-backdrop" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); display: flex; justify-content: center; align-items: center; z-index: 999;">
+  <div class="forgot-password-modal" style="background: #ffffff; border-radius: 10px; padding: 20px; max-width: 400px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); text-align: center;">
+    <h2 style="font-size: 18px; margin-bottom: 15px;">¿Olvidaste tu contraseña?</h2>
+    <p style="font-size: 14px; margin-bottom: 15px;">Para recuperar tu contraseña, comunícate con el administrador del sistema o envía un correo electrónico a soportemaltexco.com. Te ayudaremos a restablecerla rápidamente.</p>
+    <button class="forgot-password-modal-close" (click)="closeForgotPasswordModal()" style="background: #ae4a4a; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; font-size: 14px;">
+      Cerrar
+    </button>
+  </div>
+</div>
+
+<!-- Pie de página -->
+<ion-footer>
+  <div class="footer" style="text-align: center; padding: 10px; background: #ae4a4a; color: white; font-size: 12px;">
+    <p>&copy; 2024 Maltexco. Todos los derechos reservados.</p>
+    <p><a href="/privacy-policy" class="footer-link" style="color: #f7d9d9; text-decoration: none;">Política de Privacidad</a> | <a href="/terms" class="footer-link" style="color: #f7d9d9; text-decoration: none;">Términos y Condiciones</a></p>
+  </div>
+</ion-footer>

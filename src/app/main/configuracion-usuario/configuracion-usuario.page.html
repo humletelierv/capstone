@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar class="headerArriba">
+    <!-- Botón de regresar -->
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon name="arrow-back-circle-outline"></ion-icon>
+        <ion-label>Volver</ion-label>
+      </ion-button>
+    </ion-buttons>
+    <div>Cerrar Sesión</div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-header>
+  <div class="image-container">
+    <ion-img src="../../../assets/img/logo-web-3.jpg" alt="Maltexco logo" class="image-inside"></ion-img>
+  </div>
+</ion-header>
+
+<ion-content>
+  <!-- Sección: Confirmación de cierre de sesión -->
+  <ion-card class="cerrar-sesion-card" style="margin: 20px; padding: 30px; background: #ffffff; border-radius: 15px; box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);">
+    <ion-card-title style="text-align: center; font-size: 22px; font-weight: bold; color: #ae4a4a; margin-bottom: 15px;">
+      ¿Seguro que deseas cerrar sesión?
+    </ion-card-title>
+    <ion-card-content style="font-size: 15px; line-height: 1.8; color: #444; text-align: center;">
+      <p>
+        Al cerrar sesión, se finalizará tu acceso a esta cuenta de manera segura. Para volver a ingresar, será necesario que introduzcas nuevamente tus credenciales.
+      </p>
+      <p>
+        Si deseas realizar cambios adicionales, puedes permanecer conectado y regresar a la configuración de usuario.
+      </p>
+    </ion-card-content>
+    <!-- Botón de cerrar sesión -->
+    <div class="cerrar-sesion-container" style="text-align: center; margin-top: 20px;">
+      <ion-button class="cerrar-sesion" (click)="logout()">Cerrar sesión</ion-button>
+    </div>
+  </ion-card>
+</ion-content>
+
+<!-- Redes Sociales en el Footer -->
+<ion-footer>
+  <div class="footer" style="background: #ae4a4a; padding: 20px; text-align: center; color: white;">
+    <p style="font-size: 14px;">Síguenos en nuestras redes sociales:</p>
+    <div class="social-icons" style="display: flex; justify-content: center; gap: 15px; margin-top: 10px;">
+      <ion-button fill="clear" href="https://www.facebook.com/Maltexco" target="_blank">
+        <ion-icon name="logo-facebook" style="font-size: 24px; color: white;"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" href="https://www.instagram.com/Maltexco" target="_blank">
+        <ion-icon name="logo-instagram" style="font-size: 24px; color: white;"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" href="https://www.linkedin.com/company/maltexco" target="_blank">
+        <ion-icon name="logo-linkedin" style="font-size: 24px; color: white;"></ion-icon>
+      </ion-button>
+    </div>
+    <p style="margin-top: 15px; font-size: 12px;">&copy; 2024 Maltexco. Todos los derechos reservados.</p>
+  </div>
+</ion-footer>

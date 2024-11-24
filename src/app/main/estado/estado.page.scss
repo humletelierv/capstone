@@ -1,0 +1,234 @@
+/* Estilos generales */
+body {
+  background-color: #ce0000; /* Fondo rojo */
+  color: #0e1802; /* Texto oscuro */
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif; /* Fuente moderna */
+  line-height: 1.6;
+}
+
+/* Header */
+.headerArriba {
+  --background: linear-gradient(90deg, #460909, #823a2e); /* Mantener el degradado rojo elegante */
+  --color: white; /* Texto blanco */
+  height: 80px;
+  font-size: 1.8em;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más profunda */
+}
+
+ /* Contenedor del logo */
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Ajustar margen si es necesario */
+  background: none; /* Quitar fondo */
+  border-radius: 0; /* Quitar bordes redondeados */
+  margin-bottom: 10px;
+  padding: 0; /* Quitar relleno */
+  box-shadow: none; /* Quitar sombra */
+}
+
+.image-inside {
+  width: 130px; /* Tamaño del logo */
+  height: auto;
+}
+
+/* Responsividad del logo */
+@media screen and (max-width: 768px) {
+  .image-container {
+    top: -10px; /* Menor desplazamiento en pantallas pequeñas */
+  }
+
+  .image-inside {
+    width: 100px; /* Logo más pequeño en móviles */
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .image-container {
+    top: -30px; /* Mayor desplazamiento en pantallas grandes */
+  }
+
+  .image-inside {
+    width: 140px; /* Logo más grande en pantallas grandes */
+  }
+}
+
+/* Tarjeta */
+ion-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  margin-bottom: 30px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+ion-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Header de las tarjetas */
+ion-card-header {
+  background: linear-gradient(to right, #1976d2, #1565c0); /* Fondo degradado azul */
+  color: #ffffff; /* Texto blanco */
+  padding: 25px;
+  text-align: center;
+  font-size: 1.6em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 20px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+/* Contenido de las tarjetas */
+ion-card-content {
+  padding: 30px;
+  font-size: 1.2em;
+  line-height: 1.8;
+  color: #ffffff; /* Texto blanco */
+  background: #1565c0; /* Fondo azul oscuro */
+  border-radius: 15px;
+  box-shadow: inset 0px 3px 8px rgba(0, 0, 0, 0.2); /* Sombra interna */
+}
+
+/* Lista de detalles */
+ion-list {
+  background: #ffebee; /* Fondo claro */
+  border-radius: 15px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Sombra */
+  padding: 20px;
+  margin-top: 15px;
+}
+
+/* Detalles de Batch */
+ion-item {
+  background: #ffffff; /* Fondo blanco */
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+ion-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Manteniendo el diseño de los botones */
+ion-tab-button {
+  font-weight: bold;
+  color: #7a7a7a; /* Color predeterminado */
+}
+
+ion-tab-button[aria-selected="true"] {
+  color: #3880ff; /* Color destacado */
+}
+
+
+ion-label h2,
+ion-label p {
+  background: #ffcdd2; /* Fondo rosado claro */
+  border-left: 5px solid #d32f2f; /* Barra roja */
+  padding: 12px;
+  border-radius: 10px;
+  margin: 8px 0;
+  box-shadow: inset 0px 3px 6px rgba(0, 0, 0, 0.1); /* Sombra interna */
+  color: #2c2c2c; /* Texto más oscuro */
+}
+
+ion-label:hover h2,
+ion-label:hover p {
+  background: #e57373; /* Fondo rojizo */
+  color: #ffffff; /* Texto blanco al pasar el mouse */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Sombra externa */
+  transform: scale(1.02);
+}
+
+
+
+
+ion-icon {
+  font-size: 24px;
+  color: #3880ff;
+}
+
+ion-label {
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+ion-tab-bar {
+  background-color: #ffffff;
+  border-top: 1px solid #e0e0e0;
+  height: 60px;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+}
+/* Texto "Cargando" con diseño profesional y animación */
+.no-data-message {
+  position: absolute;
+  top: 50%; /* Centrado verticalmente */
+  left: 50%; /* Centrado horizontalmente */
+  transform: translate(-50%, -50%); /* Ajuste para centrar exactamente */
+  color: #ffffff; /* Texto blanco */
+  font-size: 1.3em; /* Tamaño de fuente más grande */
+  font-weight: bold; /* Negrita */
+  text-align: center; /* Centrar el texto */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); /* Sombra sutil en el texto */
+  background: linear-gradient(90deg, #823a2e, #460909); /* Fondo degradado */
+  padding: 15px 30px; /* Espaciado interno */
+  border-radius: 25px; /* Bordes redondeados */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Sombra externa */
+  animation: loading-text 2s infinite, glowing-border 1.5s infinite; /* Animaciones */
+}
+
+/* Animación: Parpadeo */
+@keyframes loading-text {
+  0% {
+    opacity: 1; /* Totalmente visible */
+  }
+  50% {
+    opacity: 0.7; /* Semitransparente */
+  }
+  100% {
+    opacity: 1; /* Totalmente visible */
+  }
+}
+
+/* Animación: Borde que brilla */
+@keyframes glowing-border {
+  0% {
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.7);
+  }
+  100% {
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
+  }
+}
+ion-card-title {
+  font-size: 0.7em; /* Reducido ligeramente (ajustar según necesidad) */
+  font-weight: bold;
+  color: #ffffff;
+  padding: 10px;
+  background: #1976d2; /* Fondo azul */
+  border-radius: 8px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+  text-align: center;
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+ion-card-title:hover {
+  background: #1565c0; /* Fondo más oscuro */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Más sombra */
+  transform: scale(1.02);
+}

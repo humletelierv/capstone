@@ -1,0 +1,172 @@
+/* Header */
+.headerArriba {
+  --background: linear-gradient(90deg, #460909, #823a2e); /* Mantener el degradado rojo elegante */
+  --color: white; /* Texto blanco */
+  height: 80px;
+  font-size: 1.8em;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más profunda */
+}
+
+/* Contenedor del logo */
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin-top: 5px;
+}
+
+/* Tarjetas */
+.custom-card {
+  margin: 20px; /* Separación externa */
+  padding: 20px; /* Separación interna */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15); /* Sombra más marcada */
+  background: linear-gradient(135deg, #e3e3e3, #ffffff); /* Fondo con mayor contraste */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-card:hover {
+  transform: translateY(-8px); /* Efecto flotante */
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.25); /* Sombra más profunda al hover */
+  background: linear-gradient(135deg, #ffffff, #f0f0f0); /* Cambio sutil de fondo */
+}
+
+/* Divisor */
+ion-item-divider {
+  background-color: #fefefe; /* Fondo blanco puro */
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #444444; /* Texto más oscuro */
+  padding: 12px;
+  margin-top: 25px;
+  border-left: 5px solid #ff5733; /* Barra decorativa roja vibrante */
+}
+
+/* Estilo de la barra de tabs */
+.custom-tab-bar {
+  background-color: #f9f9f9; /* Fondo gris muy claro */
+  border-top: 2px solid #e0e0e0;
+  height: 60px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.has-tabs {
+  padding-bottom: 60px;
+}
+
+ion-tab-button {
+  font-weight: bold;
+  color: #555555; /* Texto gris oscuro */
+  transition: color 0.3s ease;
+}
+
+ion-tab-button[aria-selected="true"] {
+  color: #ff5733; /* Rojo vibrante para el botón seleccionado */
+}
+
+ion-icon {
+  font-size: 26px; /* Tamaño ligeramente mayor */
+  color: inherit;
+}
+
+ion-label {
+  font-size: 14px;
+  margin-top: 4px;
+  font-weight: 700;
+}
+
+/* Fondo general */
+body {
+  background-color: #eeeeee; /* Fondo gris más oscuro */
+  font-family: 'Poppins', sans-serif;
+  color: #212529;
+  line-height: 1.6;
+}
+
+/* Scrollbar personalizado */
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #888888; /* Gris oscuro para contraste */
+  border-radius: 6px;
+}
+
+/* Contenido de la tarjeta */
+.custom-card-content {
+  color: #2c2c2c; /* Texto más oscuro */
+  font-size: 1.2em;
+  line-height: 1.8;
+  margin-top: 10px;
+  padding: 12px;
+  border-left: 5px solid #ffa500; /* Barra decorativa naranja */
+  background: #fff8e1; /* Fondo amarillo pastel */
+  border-radius: 12px;
+}
+
+/* Botones en las tarjetas */
+.custom-button {
+  background-color: #ff5733; /* Rojo vibrante */
+  color: white;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+  margin-top: 15px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.custom-button:hover {
+  background-color: #c70039; /* Rojo más oscuro */
+  transform: scale(1.1); /* Efecto de crecimiento */
+}
+ /* Contenedor del logo */
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Ajustar margen si es necesario */
+  background: none; /* Quitar fondo */
+  border-radius: 0; /* Quitar bordes redondeados */
+  padding: 0; /* Quitar relleno */
+  box-shadow: none; /* Quitar sombra */
+}
+/* Imagen del logo */
+.image-container img {
+  width: 130px; /* Cambia el tamaño del logo (ajusta según lo necesites) */
+  height: auto; /* Mantén la proporción del logo */
+}
+/* Botones de navegación */
+ion-tab-button {
+  font-weight: bold; /* Texto en negrita */
+  color: #7a7a7a; /* Gris predeterminado */
+}
+
+ion-tab-button[aria-selected="true"] {
+  color: #3880ff; /* Azul destacado cuando está seleccionado */
+}
+
+ion-tab-bar {
+  background-color: #ffffff; /* Fondo blanco */
+  border-top: 1px solid #e0e0e0; /* Línea de separación superior */
+  height: 60px; /* Altura de la barra */
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+ion-icon {
+  font-size: 24px; /* Tamaño de los iconos */
+  color: #3880ff; /* Azul predeterminado */
+}
+
+ion-label {
+  font-size: 12px; /* Tamaño del texto */
+  margin-top: 4px; /* Espaciado superior */
+}
+

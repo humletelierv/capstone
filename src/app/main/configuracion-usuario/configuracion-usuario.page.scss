@@ -1,0 +1,140 @@
+.custom-tab-bar {
+  background-color: #ffffff;
+  border-top: 2px solid #cfe7ff; /* Azul claro */
+  height: 60px;
+  box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.has-tabs {
+  padding-bottom: 60px; /* Espacio para los tabs */
+}
+
+ion-tab-button {
+  font-weight: bold;
+  color: #7a7a7a; /* Color predeterminado */
+  transition: color 0.3s ease;
+}
+
+ion-tab-button[aria-selected="true"] {
+  color: #0078d7; /* Azul vibrante */
+}
+
+ion-icon {
+  font-size: 24px;
+  color: inherit;
+}
+
+ion-label {
+  font-size: 14px; /* Ajuste del tamaño del texto */
+  margin-top: 4px;
+}
+
+ion-tab-bar {
+  padding: 4px 0; /* Ajusta el espaciado interno */
+}
+
+/* Header */
+.headerArriba {
+  --background: linear-gradient(90deg, #460909, #823a2e); /* Mantener el degradado rojo elegante */
+  --color: white; /* Texto blanco */
+  height: 80px;
+  font-size: 1.8em;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más profunda */
+}
+
+ /* Contenedor del logo */
+ .image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Ajustar margen si es necesario */
+  background: none; /* Quitar fondo */
+  margin-bottom: 20px; /* Agregar espacio debajo del logo
+  border-radius: 0; /* Quitar bordes redondeados */
+  padding: 0; /* Quitar relleno */
+  box-shadow: none; /* Quitar sombra */
+}
+
+
+
+/* Botón de cerrar sesión */
+.cerrar-sesion {
+  color: #ffffff; /* Texto blanco */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 12px 30px; /* Espaciado interno más amplio */
+  font-size: 1.1rem; /* Tamaño de texto cómodo */
+  font-weight: bold; /* Negrita */
+  text-align: center; /* Centrar texto */
+  cursor: pointer; /* Indicador de clic */
+  width: 100%; /* Ajustar al ancho del contenedor */
+  max-width: 240px; /* Limitar ancho máximo del botón */
+  border: none; /* Sin borde adicional */
+}
+
+
+/* Ajustes para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  .cerrar-sesion-container {
+    max-width: 95%; /* Más ancho en dispositivos pequeños */
+    padding: 10px; /* Reducir padding */
+  }
+
+  .cerrar-sesion {
+    font-size: 1rem; /* Reducir tamaño de texto */
+    padding: 10px 20px; /* Ajustar espaciado */
+  }
+}
+/* Redes sociales */
+.social-icons ion-icon {
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons ion-icon:hover {
+  transform: scale(1.2);
+  color: #f7d9d9; /* Cambio de color al pasar el mouse */
+}
+
+/* Sección "Sobre Maltexco" */
+.about-maltexco {
+  background: linear-gradient(135deg, #fff, #f4f4f4); /* Fondo degradado claro */
+  border: 1px solid #ddd; /* Borde sutil */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.about-maltexco ion-card-title {
+  color: #ae4a4a; /* Rojo corporativo */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.about-maltexco ion-card-content {
+  color: #555; /* Texto gris oscuro */
+  font-size: 14px;
+  line-height: 1.6; /* Espaciado entre líneas */
+}
+
+/* Footer */
+.footer {
+  background: #ae4a4a;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+.footer a {
+  color: #f7d9d9;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+.footer {
+  transition: none; /* Elimina cualquier transición que pueda retrasar el cambio */
+}
