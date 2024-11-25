@@ -42,7 +42,9 @@ export class HomePage implements OnInit {
     this.router.navigateByUrl('/procesos');
   }
 
+
+
   goToInformes() {
-    console.log('Redirigiendo a Informes');  // Implementar la navegación más tarde
+    this.router.navigateByUrl('/info-analisis');
   }
 }

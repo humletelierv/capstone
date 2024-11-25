@@ -65,8 +65,16 @@ const routes: Routes = [
     loadChildren: () => import('./main/detallehorno/detallehorno.module').then( m => m.DetallehornoPageModule),
     canActivate: [AuthGuard], // Protege la ruta con el AuthGuard
   },
-
-
+  {
+    path: 'info-analisis',
+    loadChildren: () => import('./main/info-analisis/info-analisis.module').then( m => m.InfoAnalisisPageModule),
+    canActivate: [AuthGuard], // Protege la ruta con el AuthGuard
+  },
+  {
+    path: 'detalle-analisis/:NumeroBatch',
+    loadChildren: () => import('./main/detalle-analisis/detalle-analisis.module').then( m => m.DetalleAnalisisPageModule),
+    canActivate: [AuthGuard], // Protege la ruta con el AuthGuard
+  },
 
 ];
 

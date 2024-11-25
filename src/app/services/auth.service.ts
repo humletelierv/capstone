@@ -8,6 +8,7 @@ import { Tina } from '../interface/info-tina'
 import { InfoHorno } from '../interface/info-horno'
 import { InfoGerm } from '../interface/info-germ'
 import { Http } from '@capacitor-community/http';
+import { InfoAnalisis } from '../interface/info-analisis';
 
 @Injectable({
   providedIn: 'root',
@@ -227,6 +228,31 @@ infoGerm(): Observable<InfoGerm[]> {
       };
 
       return this.http.get<InfoGerm[]>(`${this.apiUrl}/info-germ/`, {
+        headers,
+      });
+    })
+  );
+}
+
+// Método GET para obtener los datos con token
+infoAnalisis(): Observable<InfoAnalisis[]> {
+  return from(this.storage.get('access_token')).pipe(
+    switchMap((token) => {
+      const headers = new HttpHeaders({
+        Authorization: `Bearer ${token}`,
+      });
+
+      const options = {
+        url: `${this.apiUrl}/info-analisis/`,
+        headers: { 'Content-Type': 'application/json' },
+        method: 'GET',
+        params: {}, // No tiene que ser Null
+        server: {
+          allowInsecureConnections: true, // Esto permite conexiones inseguras solo para pruebas
+        },
+      };
+
+      return this.http.get<InfoAnalisis[]>(`${this.apiUrl}/info-analisis/`, {
         headers,
       });
     })
