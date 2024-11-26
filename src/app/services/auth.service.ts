@@ -42,6 +42,7 @@ export class AuthService {
       headers: { 'Content-Type': 'application/json' },
       data: { username, password },
       method: 'POST',
+      params:{},
       // Permitir conexiones inseguras solo en desarrollo
       server: {
         allowInsecureConnections: true,
@@ -122,12 +123,31 @@ export class AuthService {
   }
 
   async getUsuarios(): Promise<any> {
+    // Obtén el token almacenado
     const token = await this.storage.get('access_token');
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${token}`
-    });
 
-    return this.http.get(`${this.apiUrl}/usuarios/`, { headers }).toPromise();
+    // Configuración de la solicitud con Capacitor HTTP
+    const options = {
+      url: `${this.apiUrl}/usuarios/`,
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+      method: 'GET', // Método HTTP para obtener datos
+      params: {},
+      allowInsecureConnections: true, // Solo si estás en un entorno de pruebas
+    };
+
+    try {
+      // Realiza la solicitud HTTP
+      const response = await Http.request(options);
+
+      // Devuelve los datos de la respuesta
+      return response.data;
+    } catch (error) {
+      console.error('Error en la solicitud HTTP:', error);
+      throw error; // Maneja el error según sea necesario
+    }
   }
 
 // Método GET para obtener los datos con token
@@ -192,7 +212,7 @@ infoHorno(): Observable<InfoHorno[]> {
       });
 
       const options = {
-        url: `${this.apiUrl}/info-tina/`,
+        url: `${this.apiUrl}/info-horno/`,
         headers: { 'Content-Type': 'application/json' },
         method: 'GET',
         params: {}, // No tiene que ser Null
@@ -201,9 +221,10 @@ infoHorno(): Observable<InfoHorno[]> {
         },
       };
 
-      return this.http.get<InfoHorno[]>(`${this.apiUrl}/info-horno/`, {
-        headers,
-      });
+      // Utiliza Capacitor HTTP para la solicitud con configuración personalizada
+      return from(Http.request(options)).pipe(
+        map((response) => response.data as InfoHorno[])
+      );
     })
   );
 }
@@ -226,9 +247,10 @@ infoGerm(): Observable<InfoGerm[]> {
         },
       };
 
-      return this.http.get<InfoGerm[]>(`${this.apiUrl}/info-germ/`, {
-        headers,
-      });
+      // Utiliza Capacitor HTTP para la solicitud con configuración personalizada
+      return from(Http.request(options)).pipe(
+        map((response) => response.data as InfoGerm[])
+      );
     })
   );
 }
@@ -251,9 +273,10 @@ infoAnalisis(): Observable<InfoAnalisis[]> {
         },
       };
 
-      return this.http.get<InfoAnalisis[]>(`${this.apiUrl}/info-analisis/`, {
-        headers,
-      });
+      // Utiliza Capacitor HTTP para la solicitud con configuración personalizada
+      return from(Http.request(options)).pipe(
+        map((response) => response.data as InfoAnalisis[])
+      );
     })
   );
 }
@@ -265,71 +288,116 @@ async isAuthenticated(): Promise<boolean> {
 }
 
 async createUser(data: any): Promise<any> {
+  // Obtén el token almacenado
   const token = await this.storage.get('access_token');
-  const headers = new HttpHeaders({
-    'Authorization': `Bearer ${token}`,
-    'Content-Type': 'application/json'
-  });
 
+  // Configuración de la solicitud con Capacitor HTTP
   const options = {
-    url: `${this.apiUrl}/info-analisis/`,
-    headers: { 'Content-Type': 'application/json' },
-    method: 'GET',
-    params: {}, // No tiene que ser Null
-    server: {
-      allowInsecureConnections: true, // Esto permite conexiones inseguras solo para pruebas
+    url: `${this.apiUrl}/usuarios/`,
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json',
     },
+    method: 'POST', // Método HTTP para crear
+    data: data, // Datos del usuario a crear
+    params: {},
+    allowInsecureConnections: true, // Solo si estás en un entorno de pruebas
   };
 
-  return this.http.post(`${this.apiUrl}/usuarios/`, data, { headers }).toPromise();
+  try {
+    // Realiza la solicitud HTTP
+    const response = await Http.request(options);
+
+    // Devuelve los datos de la respuesta
+    return response.data;
+  } catch (error) {
+    console.error('Error en la solicitud HTTP:', error);
+    throw error; // Maneja el error según sea necesario
+  }
 }
 
 async updateUser(userId: number, data: any): Promise<any> {
+  // Obtén el token almacenado
   const token = await this.storage.get('access_token');
-  const headers = new HttpHeaders({
-    'Authorization': `Bearer ${token}`,
-    'Content-Type': 'application/json'
-  });
 
+  // Configuración de la solicitud con Capacitor HTTP
   const options = {
-    url: `${this.apiUrl}/info-analisis/`,
-    headers: { 'Content-Type': 'application/json' },
-    method: 'GET',
-    params: {}, // No tiene que ser Null
-    server: {
-      allowInsecureConnections: true, // Esto permite conexiones inseguras solo para pruebas
+    url: `${this.apiUrl}/usuarios/${userId}/`,
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json',
     },
+    method: 'PUT', // Método HTTP para actualizar
+    params: {},
+    data: data, // Datos a actualizar
+    allowInsecureConnections: true, // Solo si estás en un entorno de pruebas
   };
 
-  return this.http.put(`${this.apiUrl}/usuarios/${userId}/`, data, { headers }).toPromise();
+  try {
+    // Realiza la solicitud HTTP
+    const response = await Http.request(options);
+
+    // Devuelve los datos de la respuesta
+    return response.data;
+  } catch (error) {
+    console.error('Error en la solicitud HTTP:', error);
+    throw error; // Maneja el error según lo necesario
+  }
 }
 
 async deleteUser(userId: number): Promise<any> {
+  // Obtén el token almacenado
   const token = await this.storage.get('access_token');
-  const headers = new HttpHeaders({
-    'Authorization': `Bearer ${token}`
-  });
 
+  // Configuración de la solicitud con Capacitor HTTP
   const options = {
-    url: `${this.apiUrl}/info-analisis/`,
-    headers: { 'Content-Type': 'application/json' },
-    method: 'GET',
-    params: {}, // No tiene que ser Null
-    server: {
-      allowInsecureConnections: true, // Esto permite conexiones inseguras solo para pruebas
+    url: `${this.apiUrl}/usuarios/${userId}/`,
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json',
     },
+    method: 'DELETE', // Método HTTP para eliminar
+    params: {},
+    allowInsecureConnections: true, // Solo si estás en un entorno de pruebas
   };
 
-  return this.http.delete(`${this.apiUrl}/usuarios/${userId}/`, { headers }).toPromise();
+  try {
+    // Realiza la solicitud HTTP
+    const response = await Http.request(options);
+
+    // Devuelve los datos de la respuesta o un mensaje de éxito
+    return response.data || { message: 'Usuario eliminado correctamente' };
+  } catch (error) {
+    console.error('Error en la solicitud HTTP:', error);
+    throw error; // Maneja el error según lo necesario
+  }
 }
 
 async getUserDetails(userId: number): Promise<any> {
+  // Obtén el token almacenado
   const token = await this.storage.get('access_token');
-  const headers = new HttpHeaders({
-    'Authorization': `Bearer ${token}`,
-    'Content-Type': 'application/json',
-  });
 
-  return this.http.get(`${this.apiUrl}/usuarios/${userId}/`, { headers }).toPromise();
+  // Configuración de la solicitud con Capacitor HTTP
+  const options = {
+    url: `${this.apiUrl}/usuarios/${userId}/`,
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+    method: 'GET', // Método HTTP
+    params: {}, // Asegúrate de enviar un objeto válido, aunque esté vacío
+    allowInsecureConnections: true, // Solo si estás en un entorno de pruebas
+  };
+
+  try {
+    // Realiza la solicitud HTTP
+    const response = await Http.request(options);
+
+    // Devuelve los datos de la respuesta
+    return response.data;
+  } catch (error) {
+    console.error('Error en la solicitud HTTP:', error);
+    throw error; // Maneja el error según lo necesario
+  }
 }
 }
