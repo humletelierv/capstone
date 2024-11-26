@@ -2,6 +2,8 @@ import { Component, OnInit, Renderer2 } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-configuracion-usuario',
@@ -10,15 +12,23 @@ import { Location } from '@angular/common';
 })
 export class ConfiguracionUsuarioPage implements OnInit {
   isAdmin: boolean = false; // Variable para controlar si el usuario es admin
-
+  private apiUrl = 'http://34.176.172.96/api';  // URL de la API de Django
   constructor(
     private authService: AuthService,
     private router: Router,
     private location: Location,
-    private renderer: Renderer2 // Inyectar Renderer2 para manipular el DOM
+    private renderer: Renderer2, // Inyectar Renderer2 para manipular el DOM
+    private storage: Storage,
+    private http: HttpClient
   ) {}
 
-  async ngOnInit() {}
+  async ngOnInit() {
+    const userId = await this.storage.get('id'); // Obtén el id del usuario
+    if (userId) {
+      const userData = await this.authService.getUserDetails(userId);
+      this.isAdmin = userData.role === 'admin';
+    }
+  }
 
   // Navegar a la página anterior
   goBack() {

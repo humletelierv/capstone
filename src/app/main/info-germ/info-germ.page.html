@@ -5,20 +5,21 @@
 
     </ion-toolbar>
   </ion-header>
-  <ion-header>
+
     <div class="image-container">
       <ion-img src="../../../assets/img/logo-web-3.jpg" alt="maltexco logo" class="image-inside"></ion-img>
     </div>
 
-    <ion-toolbar>
-      <ion-searchbar
-        placeholder="Buscar por número de Batch"
-        [(ngModel)]="query"
-        (ionClear)="reiniciarFiltros()"
-        (ionInput)="buscarBatch($event)"
-      ></ion-searchbar>
-    </ion-toolbar>
-  </ion-header>
+  <!-- Contenedor de la barra de búsqueda -->
+  <div class="searchbar-container">
+    <ion-searchbar
+      placeholder="Buscar por número de Batch"
+      [(ngModel)]="query"
+      (ionClear)="reiniciarFiltros()"
+      (ionInput)="buscarBatch($event)">
+    </ion-searchbar>
+  </div>
+
 </ion-header>
 
 

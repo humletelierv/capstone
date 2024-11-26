@@ -42,37 +42,37 @@ h2 {
 .headerArriba:hover {
   --background: #e74c3c; /* Rojo más fuerte al hover */
 }
-
-/* Contenedor principal */
+.boton-iniciar-sesion{
+  --background: linear-gradient(90deg, #030303, #823a2e);
+}
 .main-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 32px;
-  background: #ffffff; /* Fondo blanco brillante */
-  border-radius: 30px;
-  margin-top: 50px;
-  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.15); /* Sombra sutil para profundidad */
   width: 100%; /* Ocupa el ancho disponible */
   max-width: 800px; /* Controlar el ancho máximo */
   text-align: center; /* Centrar el texto */
   padding: 20px; /* Espaciado interno */
   box-sizing: border-box; /* Incluir padding en el tamaño total */
+  margin: 0 auto; /* Centrar en la página */
 }
+
 
 .main-content:hover {
   box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.2); /* Más sombra al hover */
   transform: translateY(-6px); /* Suave movimiento hacia arriba */
 }
 
-/* Contenedor del logo */
-.image-container {
+
+ /* Contenedor del logo */
+ .image-container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 20px; /* Ajustar margen si es necesario */
   background: none; /* Quitar fondo */
+  margin-bottom: 20px; /* Agregar espacio debajo del logo
   border-radius: 0; /* Quitar bordes redondeados */
   padding: 0; /* Quitar relleno */
   box-shadow: none; /* Quitar sombra */
@@ -365,6 +365,7 @@ body {
   justify-content: center; /* Centrar horizontalmente */
   align-items: center; /* Centrar verticalmente */
   overflow: hidden; /* Evitar cualquier scroll */
+  background-attachment: fixed; /* Fondo fijo */
 }
 /* Estilos generales */
 html, body {

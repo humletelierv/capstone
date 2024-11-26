@@ -13,15 +13,15 @@
     </ion-img>
   </div>
 
-  <!-- Barra de búsqueda -->
-  <ion-toolbar class="search-toolbar">
+  <!-- Contenedor de la barra de búsqueda -->
+  <div class="searchbar-container">
     <ion-searchbar
       placeholder="Buscar por número de Batch"
       [(ngModel)]="query"
       (ionClear)="reiniciarFiltros()"
       (ionInput)="buscarBatch($event)">
     </ion-searchbar>
-  </ion-toolbar>
+  </div>
 </ion-header>
 
 <ion-content>

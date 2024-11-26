@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
+import { AdminGuard } from './guards/admin.guard';
 
 const routes: Routes = [
   {
@@ -22,12 +23,12 @@ const routes: Routes = [
   {
     path: 'configuracion-usuario',
     loadChildren: () => import('./main/configuracion-usuario/configuracion-usuario.module').then( m => m.ConfiguracionUsuarioPageModule),
-    canActivate: [AuthGuard], // Protege la ruta con el AuthGuard
+    canActivate: [AuthGuard],  // Protege la ruta con el AuthGuard
   },
   {
     path: 'gestion-usuarios',
     loadChildren: () => import('./main/gestion-usuarios/gestion-usuarios.module').then( m => m.GestionUsuariosPageModule),
-    canActivate: [AuthGuard], // Protege la ruta con el AuthGuard
+    canActivate: [AuthGuard, AdminGuard], // Protege la ruta con el AuthGuard
   },
   {
     path: 'estado',

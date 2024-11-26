@@ -149,10 +149,6 @@ ion-tab-button {
   color: #7a7a7a; /* Gris predeterminado */
 }
 
-ion-tab-button[aria-selected="true"] {
-  color: #3880ff; /* Azul destacado cuando está seleccionado */
-}
-
 ion-tab-bar {
   background-color: #ffffff; /* Fondo blanco */
   border-top: 1px solid #e0e0e0; /* Línea de separación superior */
@@ -160,13 +156,19 @@ ion-tab-bar {
   box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 
-ion-icon {
-  font-size: 24px; /* Tamaño de los iconos */
-  color: #3880ff; /* Azul predeterminado */
-}
 
 ion-label {
   font-size: 12px; /* Tamaño del texto */
   margin-top: 4px; /* Espaciado superior */
 }
 
+ion-tab-button {
+  font-weight: bold;
+  color:  #823a2e;
+}
+
+
+ion-icon {
+  font-size: 24px;
+  color: #823a2e;
+}

@@ -168,18 +168,23 @@ html, body {
   color: #000000; /* Texto negro */
 }
 
-/* Contenedor principal */
 .main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%; /* Ocupa el ancho disponible */
   max-width: 800px; /* Controlar el ancho máximo */
   text-align: center; /* Centrar el texto */
   padding: 20px; /* Espaciado interno */
   box-sizing: border-box; /* Incluir padding en el tamaño total */
+  margin: 0 auto; /* Centrar en la página */
 }
+
 /* Botones de navegación */
 ion-tab-button {
   font-weight: bold; /* Texto en negrita */
-  color: #7a7a7a; /* Gris predeterminado */
+  color:  #823a2e;
 }
 
 ion-tab-button[aria-selected="true"] {
@@ -195,11 +200,10 @@ ion-tab-bar {
 
 ion-icon {
   font-size: 24px; /* Tamaño de los iconos */
-  color: #3880ff; /* Azul predeterminado */
+  color: #823a2e;
 }
 
 ion-label {
   font-size: 12px; /* Tamaño del texto */
   margin-top: 4px; /* Espaciado superior */
 }
-

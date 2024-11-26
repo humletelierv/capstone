@@ -1,13 +1,59 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>gestion-usuarios</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">gestion-usuarios</ion-title>
+<ion-header>
+  <ion-header>
+    <ion-toolbar class="headerArriba">
     </ion-toolbar>
   </ion-header>
+  <ion-header>
+    <div class="image-container">
+      <ion-img src="../../../assets/img/logo-web-3.jpg" alt="maltexco logo" class="image-inside"></ion-img>
+    </div>
+  </ion-header>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-button expand="block" color="primary" (click)="openCreateModal()">Crear Usuario</ion-button>
+
+    <ion-list>
+      <ion-item *ngFor="let user of usuarios">
+        <ion-label>
+          <h2>{{ user.username }}</h2>
+          <p>Email: {{ user.email }}</p>
+          <p>Nombre: {{ user.first_name }} {{ user.last_name }}</p>
+          <p>RUT: {{ user.rut }}</p>
+          <p>Rol: {{ user.role }}</p>
+        </ion-label>
+        <ion-button fill="outline" slot="end" color="tertiary" (click)="openEditModal(user)">Editar</ion-button>
+        <ion-button fill="outline" slot="end" color="danger" (click)="deleteUser(user.id)">Eliminar</ion-button>
+      </ion-item>
+    </ion-list>
+
+
+  </ion-card>
+
+
 </ion-content>
+
+
+<ion-content *ngIf="!usuarios">
+  <p style="text-align: center; margin-top: 20px;">Cargando...</p>
+</ion-content>
+
+<!-- Footer fijo para los botones -->
+<ion-footer>
+  <ion-tab-bar class="custom-tab-bar"
+  style="position: fixed; bottom: 0; width: 100%; background-color: #ffffff; border-top: 1px solid #ccc;">
+    <ion-tab-button (click)="goBack()">
+      <ion-icon name="arrow-back-circle-outline"></ion-icon>
+      <ion-label>Volver</ion-label>
+    </ion-tab-button>
+    <ion-tab-button (click)="goHome()">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Inicio</ion-label>
+    </ion-tab-button>
+    <ion-tab-button (click)="goUser()">
+      <ion-icon name="person-circle-outline"></ion-icon>
+      <ion-label>Usuario</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>

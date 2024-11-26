@@ -9,11 +9,13 @@ import { InfoHorno } from '../interface/info-horno'
 import { InfoGerm } from '../interface/info-germ'
 import { Http } from '@capacitor-community/http';
 import { InfoAnalisis } from '../interface/info-analisis';
+import { identifierName } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
+
   // private apiUrl = 'https://66f0a393f2a8bce81be658ae.mockapi.io/api/v1/';  // URL de la API
   private apiUrl = 'http://34.176.172.96/api';  // URL de la API de Django
 
@@ -40,50 +42,57 @@ export class AuthService {
       headers: { 'Content-Type': 'application/json' },
       data: { username, password },
       method: 'POST',
-      // Evita SSL solo para desarrollo
-      params: {},
+      // Permitir conexiones inseguras solo en desarrollo
       server: {
-        allowInsecureConnections: true, // Esto permite conexiones inseguras solo para pruebas
+        allowInsecureConnections: true,
       },
     };
 
-    // Realiza la solicitud HTTP
-    const response =  Http.request(options);
-
-    // Convierte la respuesta en un Observable para que funcione con subscribe
-    return from(Promise.resolve(response)).pipe(
+    return from(Http.request(options)).pipe(
       tap(async (res) => {
-        const tokens = res.data;
+        const tokens = res.data; // Captura la respuesta del backend
         if (tokens && tokens.access) {
-          // Guardamos los tokens y el nombre de usuario en Ionic Storage
+          // Guarda los tokens en el almacenamiento
           await this.storage.set('access_token', tokens.access);
           await this.storage.set('refresh_token', tokens.refresh);
-          await this.storage.set('username', username);
 
-          // Actualizamos el BehaviorSubject con el nombre de usuario
+          // Captura y almacena el `id` y el `username`
+
+          await this.storage.set('id', tokens.id); // Guarda el `id` del usuario
+          // console.log('id guardado:', tokens.id);
+
+          await this.storage.set('username', username); // Guarda el `username`
+
+          // Actualiza el BehaviorSubject
           this.usernameSubject.next(username);
 
-          console.log('Tokens guardados:', tokens);
+          // console.log('Tokens y datos del usuario guardados:', tokens);
         } else {
-          console.error('Autenticación fallida: tokens no recibidos');
+          // console.error('Error: Tokens no recibidos en la respuesta del backend');
         }
       })
     );
   }
+
 
   // Método para cerrar sesión
   async logout() {
     await this.storage.remove('access_token');
     await this.storage.remove('refresh_token');
     await this.storage.remove('username');
+    await this.storage.remove('id');
     this.usernameSubject.next('');
   }
 
-  // Método para obtener el nombre de usuario logueado desde Ionic Storage
-  async getLoggedInUser(): Promise<string | null> {
+  async getLoggedInUser(): Promise<{ id: number; username: string } | null> {
+    const id = await this.storage.get('id');
     const username = await this.storage.get('username');
-    return username || null;
+    if (id && username) {
+      return { id, username };
+    }
+    return null;
   }
+
 
   // Método para refrescar el token de acceso
   refreshToken(): Observable<any> {
@@ -120,16 +129,6 @@ export class AuthService {
 
     return this.http.get(`${this.apiUrl}/usuarios/`, { headers }).toPromise();
   }
-
-
-
-// // Método para obtener todos los Batch
-// getBatches(): Observable<any[]> {
-//   return this.http.get<any>(`${this.apiUrl}/Batch`).pipe(
-//     map((res) => res || [])  // Retorna la lista de batch o una lista vacía
-//   );
-// }
-
 
 // Método GET para obtener los datos con token
 getBatches(): Observable<Batch[]> {
@@ -265,6 +264,72 @@ async isAuthenticated(): Promise<boolean> {
   return !!token;
 }
 
+async createUser(data: any): Promise<any> {
+  const token = await this.storage.get('access_token');
+  const headers = new HttpHeaders({
+    'Authorization': `Bearer ${token}`,
+    'Content-Type': 'application/json'
+  });
 
+  const options = {
+    url: `${this.apiUrl}/info-analisis/`,
+    headers: { 'Content-Type': 'application/json' },
+    method: 'GET',
+    params: {}, // No tiene que ser Null
+    server: {
+      allowInsecureConnections: true, // Esto permite conexiones inseguras solo para pruebas
+    },
+  };
 
+  return this.http.post(`${this.apiUrl}/usuarios/`, data, { headers }).toPromise();
+}
+
+async updateUser(userId: number, data: any): Promise<any> {
+  const token = await this.storage.get('access_token');
+  const headers = new HttpHeaders({
+    'Authorization': `Bearer ${token}`,
+    'Content-Type': 'application/json'
+  });
+
+  const options = {
+    url: `${this.apiUrl}/info-analisis/`,
+    headers: { 'Content-Type': 'application/json' },
+    method: 'GET',
+    params: {}, // No tiene que ser Null
+    server: {
+      allowInsecureConnections: true, // Esto permite conexiones inseguras solo para pruebas
+    },
+  };
+
+  return this.http.put(`${this.apiUrl}/usuarios/${userId}/`, data, { headers }).toPromise();
+}
+
+async deleteUser(userId: number): Promise<any> {
+  const token = await this.storage.get('access_token');
+  const headers = new HttpHeaders({
+    'Authorization': `Bearer ${token}`
+  });
+
+  const options = {
+    url: `${this.apiUrl}/info-analisis/`,
+    headers: { 'Content-Type': 'application/json' },
+    method: 'GET',
+    params: {}, // No tiene que ser Null
+    server: {
+      allowInsecureConnections: true, // Esto permite conexiones inseguras solo para pruebas
+    },
+  };
+
+  return this.http.delete(`${this.apiUrl}/usuarios/${userId}/`, { headers }).toPromise();
+}
+
+async getUserDetails(userId: number): Promise<any> {
+  const token = await this.storage.get('access_token');
+  const headers = new HttpHeaders({
+    'Authorization': `Bearer ${token}`,
+    'Content-Type': 'application/json',
+  });
+
+  return this.http.get(`${this.apiUrl}/usuarios/${userId}/`, { headers }).toPromise();
+}
 }
