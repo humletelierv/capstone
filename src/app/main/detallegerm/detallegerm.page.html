@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-header>
+    <ion-toolbar class="headerArriba">
+    </ion-toolbar>
+  </ion-header>
+  <ion-header>
+    <div class="image-container">
+      <ion-img src="../../../assets/img/logo-web-3.jpg" alt="maltexco logo" class="image-inside"></ion-img>
+    </div>
+  </ion-header>
+</ion-header>
+
+<ion-content *ngIf="batch">
+  <ion-card class="custom-card">
+    <ion-card-header>
+      <ion-card-title>Información de Horno - Batch {{ batch.batch }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <!-- Sección: Datos Generales -->
+      <ion-item-divider>
+        <ion-label>Datos Generales</ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-icon slot="start" name="calendar-outline"></ion-icon>
+        <ion-label>Fecha: {{ batch.fecha | date: 'dd-MM-yyyy' }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="calendar-outline"></ion-icon>
+        <ion-label>Día: {{ batch.dia | date: 'dd' }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="calendar-outline"></ion-icon>
+        <ion-label>Hora: {{ batch.hora | date: 'HH:mm:ss' }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="calendar-outline"></ion-icon>
+        <ion-label>Horareloj: {{ batch.horareloj  | date: 'HH:mm:ss'}}</ion-label>
+      </ion-item>
+
+      <!-- Sección: Datos generales -->
+      <ion-item-divider>
+        <ion-label>Producción</ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+        <ion-label>Rociador: {{ batch.rociador }}°</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+        <ion-label>Temperatura retorno: {{ batch.tretorno }}°</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+        <ion-label>Temperatura exterior: {{ batch.texterior }}°</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+        <ion-label>Temperatura inferior: {{ batch.tinferior }}°</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+        <ion-label>Temperatura superior: {{ batch.tsuperior }}°</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+        <ion-label>Cajón germinación: {{ batch.tsuperior }}</ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+<ion-content *ngIf="!batch">
+  <p style="text-align: center; margin-top: 20px;">Cargando...</p>
+</ion-content>
+
+<!-- Footer fijo para los botones -->
+<ion-footer>
+  <ion-tab-bar class="custom-tab-bar"
+  style="position: fixed; bottom: 0; width: 100%; background-color: #ffffff; border-top: 1px solid #ccc;">
+    <ion-tab-button (click)="goBack()">
+      <ion-icon name="arrow-back-circle-outline"></ion-icon>
+      <ion-label>Volver</ion-label>
+    </ion-tab-button>
+    <ion-tab-button (click)="goHome()">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Inicio</ion-label>
+    </ion-tab-button>
+    <ion-tab-button (click)="goUser()">
+      <ion-icon name="person-circle-outline"></ion-icon>
+      <ion-label>Usuario</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>

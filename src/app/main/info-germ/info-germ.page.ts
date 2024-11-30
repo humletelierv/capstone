@@ -126,7 +126,7 @@ goUser() {
   this.router.navigate(['/configuracion-usuario']); // Navega a la página 'home' o cualquier página específica
 }
 goToBatchDetails(batch: InfoGerm) {
-  this.router.navigate(['/detallebatch', batch.batch]);
+  this.router.navigate(['/detallegerm', batch.batch]);
 }
 
 }

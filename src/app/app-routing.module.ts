@@ -76,6 +76,11 @@ const routes: Routes = [
     loadChildren: () => import('./main/detalle-analisis/detalle-analisis.module').then( m => m.DetalleAnalisisPageModule),
     canActivate: [AuthGuard], // Protege la ruta con el AuthGuard
   },
+  {
+    path: 'detallegerm/:NumeroBatch',
+    loadChildren: () => import('./main/detallegerm/detallegerm.module').then( m => m.DetallegermPageModule),
+    canActivate: [AuthGuard], // Protege la ruta con el AuthGuard
+  },
 
 ];
 
