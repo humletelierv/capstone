@@ -26,10 +26,6 @@
 
 <ion-content>
 
-
-  <!-- Spinner mientras se cargan los datos -->
-  <ion-spinner *ngIf="loading && !errorMessage" name="crescent" style="margin: 20px auto; display: block;"></ion-spinner>
-
   <!-- Mensaje de error si no se encuentran los datos o ocurre un problema -->
   <div *ngIf="errorMessage" style="text-align: center; margin-top: 20px;">
     <p>{{ errorMessage }}</p>
@@ -73,8 +69,8 @@
   </ion-list>
 
   <!-- Mensaje de "Cargando..." si no hay fechas -->
-  <ng-template #noData>
-    <p style="text-align: center; margin-top: 20px;">Cargando...</p>
+  <ng-template  #noData>
+    <p class="no-data-message">Cargando...</p>
   </ng-template>
 </ion-content>
 

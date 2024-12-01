@@ -10,8 +10,8 @@
   </ion-header>
 </ion-header>
 
-<ion-content *ngIf="batch">
-  <ion-card class="custom-card">
+<ion-content >
+  <ion-card class="custom-card" *ngIf="batch else noData">
     <ion-card-header>
       <ion-card-title>Información de Horno - Batch {{ batch.batch }}</ion-card-title>
     </ion-card-header>
@@ -108,8 +108,10 @@
     </ion-card-content>
   </ion-card>
 
-<ion-content *ngIf="!batch">
-  <p style="text-align: center; margin-top: 20px;">Cargando...</p>
+  <!-- Mensaje de "Cargando..." si no hay fechas -->
+  <ng-template  #noData>
+    <p class="no-data-message">Cargando...</p>
+  </ng-template>
 </ion-content>
 
 <!-- Footer fijo para los botones -->

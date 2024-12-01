@@ -15,7 +15,7 @@
 
 <ion-content>
   <!-- Información del batch -->
-  <ion-card class="custom-card" *ngIf="batch">
+  <ion-card class="custom-card" *ngIf="batch else noData">
     <ion-card-header>
       <ion-card-title>Información de Producción - Batch {{ batch.batch }}</ion-card-title>
     </ion-card-header>

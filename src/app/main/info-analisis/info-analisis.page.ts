@@ -151,4 +151,26 @@ export class InfoAnalisisPage implements OnInit {
     this.router.navigate(['/detalle-analisis', batch.batch]);
   }
 
+  getAnalistaDescripcion(id_analista: number): string {
+    const analistas: { [key: number]: string } = {
+      1: 'Natalia Herrera',
+      2: 'Jocelyn Carrillo',
+      3: 'Catalina RDG',
+      4: 'Carlos Peralta',
+      5: 'Bruno Gonzalez',
+      6: 'Monica Diaz',
+      7: 'Camila Rodriguez',
+      8: 'Otro' // Ajusta este valor si es necesario
+    };
+    return analistas[id_analista] || 'Desconocido';
+  }
+
+  getEstadoDescripcion(id_estado: number): string {
+    const estados: { [key: number]: string } = {
+      1: 'Definitivo',
+      2: 'Parcial',
+      3: 'Otro'
+    };
+    return estados[id_estado] || 'Desconocido';
+  }
 }

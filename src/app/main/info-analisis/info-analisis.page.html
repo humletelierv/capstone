@@ -61,8 +61,8 @@
             <h2>Batch: {{ batch.batch }}</h2>
             <p>Hora: {{ batch.fecha_analisis | date: 'dd-MM-yyyy' }}</p>
             <!-- <p>Estado Tina: {{ getEstadoTinaDescripcion(batch.id_estado_tina) }}</p> -->
-            <p>Estado: {{ batch.id_estado }}</p>
-            <p>Analista: {{ batch.id_analista }}</p>
+            <p>Estado: {{ getEstadoDescripcion(batch.id_estado) }}</p>
+            <p>Analista: {{ getAnalistaDescripcion(batch.id_analista) }}</p>
           </ion-label>
         </ion-item>
       </ion-list>

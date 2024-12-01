@@ -175,3 +175,22 @@ ion-icon {
   font-size: 24px;
   color: #823a2e;
 }
+
+
+/* Texto "Cargando" con diseño profesional y animación */
+.no-data-message {
+  position: absolute;
+  top: 50%; /* Centrado verticalmente */
+  left: 50%; /* Centrado horizontalmente */
+  transform: translate(-50%, -50%); /* Ajuste para centrar exactamente */
+  color: #ffffff; /* Texto blanco */
+  font-size: 1.3em; /* Tamaño de fuente más grande */
+  font-weight: bold; /* Negrita */
+  text-align: center; /* Centrar el texto */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); /* Sombra sutil en el texto */
+  background: linear-gradient(90deg, #823a2e, #460909); /* Fondo degradado */
+  padding: 15px 30px; /* Espaciado interno */
+  border-radius: 25px; /* Bordes redondeados */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Sombra externa */
+  animation: loading-text 2s infinite, glowing-border 1.5s infinite; /* Animaciones */
+}

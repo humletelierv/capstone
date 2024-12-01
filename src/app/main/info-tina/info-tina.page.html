@@ -55,8 +55,7 @@
       <!-- Lista de batches colapsable -->
       <ion-list *ngIf="isCardOpen(i)">
         <ion-item
-          *ngFor="let batch of getBatchesPorFecha(fecha)"
-          (click)="goToBatchDetails(batch)">
+          *ngFor="let batch of getBatchesPorFecha(fecha)">
           <ion-label>
             <h2>Batch: {{ batch.batch }}</h2>
             <p>Hora: {{ batch.hora | date: 'HH:mm:ss' }}</p>
